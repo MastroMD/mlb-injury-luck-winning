@@ -20,6 +20,18 @@ before any new estimate was computed (preregistration sha256[:16] `3fd792e537b68
 preregistration document is cited here by hash; pass it with `--prereg` and `injury_luck.py` checks the hash.
 Bootstrap: 2,000 club-resampled draws, seed 20260930.
 
+**Phase 2 (the full paper).** The analyses new to the paper (P2.1–P2.8) were declared in
+`PREREGISTRATION_ADDENDUM_PHASE2_2026-10-02.md` and sealed before they were computed (`SEAL_PHASE2.txt`, sha256[:16]
+`6634bfeb1212f484`). The primary talent control is each club's opening-day 40-man roster
+(`data_public/opening_day_40man_2015_2026.csv`, Stats API `rosterType=40Man` on the eve of each club's first game).
+`pipeline/phase2.py` rebuilds the primary club-season table and stops unless it equals `results/team_season_public.csv`
+within 1e-9, then writes `results/phase2_results.json` (2,000 club draws, seed 20261002).
+`pipeline/phase2_posthoc_r2.py` holds the analyses added after a second internal review. They are post hoc, and
+`DEVIATIONS.md` #23–27 lists them. It reruns `phase2.py` with marked substitutions, and without the departure rule it
+reproduces every sealed value outside the corrected designs. The internal referee report and the reply are kept with the
+study files and are available on request.
+
+
 ## Layout
 
 ```
@@ -36,10 +48,18 @@ pipeline/
   verify_injury_luck.py independent second implementation: E1, E2, E4, E7, E11 point estimate, hand walk of the
                         five largest episodes; exits 0 when every check passes
   write_readme.py       this file, from the JSON
+  phase2.py             Phase 2 (P2.1-P2.8); writes results/phase2_results.json (and team_season_phase2.csv,
+                        team_season_2026_phase2.csv, which are produced by the run and not shipped)
+  verify_phase2.py      independent rebuild of the Phase 2 headline values; exits 0 when every check passes
+  negative_control_phase2.py  perturbs three values in a copy of the results; the verifier must fail on exactly those
+  phase2_posthoc_r2.py  post hoc analyses after the Phase 2 review (club opener, departure end, extras)
+  paper_figures.py      the six figures of the paper, from the results files
 data_public/
   placements_public.csv the derived public injured-list census (one row per IL placement), sha16 `e5ed2129cf8218ec`
+  opening_day_40man_2015_2026.csv  opening-day 40-man rosters, one row per club-season-player
 results/
   injury_luck_results.json, reconciliation_public.json, figures/Figure1-3.png, verify_run.log
+  phase2_results.json, phase2_posthoc_*.json, their run logs, verify_phase2*.log, figures/paper/Figure1-6.png
 ```
 
 ## The census
@@ -78,10 +98,20 @@ python3 pipeline/phase1b_posthoc.py --dump scratch --covid scratch/covid/results
 python3 pipeline/reconcile_public.py
 python3 pipeline/injury_luck_figures.py
 python3 pipeline/verify_injury_luck.py   # exits 0
+python3 pipeline/phase2.py   # about 2 minutes; needs results/team_season_public.csv from injury_luck.py
+python3 pipeline/verify_phase2.py   # exits 0
+python3 pipeline/negative_control_phase2.py   # exits 0 when the verifier fails on the perturbed copy
+python3 pipeline/phase2_posthoc_r2.py --build opener --full   # post hoc; checks that it reproduces phase2_results.json
+python3 pipeline/phase2_posthoc_r2.py --build departure --full
+python3 pipeline/phase2_posthoc_r2.py --build opener --extras
+python3 pipeline/phase2_posthoc_r2.py --build departure --extras
+python3 pipeline/paper_figures.py   # results/figures/paper/
 python3 pipeline/write_readme.py
 ```
 
-Python 3.11, pandas 3.0, numpy 2.4, statsmodels 0.15, matplotlib 3.10 (the versions that produced `results/`).
+Python 3.10, pandas 2.3, numpy 2.2, scipy 1.15, statsmodels 0.15, matplotlib 3.10 produced the files in `results/` dated
+2026-10-02. The Phase 1 files of 2026-09-30 came from Python 3.11, pandas 3.0 and numpy 2.4, and the re-run reproduced them
+within 1e-9 (DEVIATIONS #17).
 
 ## Numbers you should get
 
@@ -131,6 +161,31 @@ residual of a leave-one-season-out prediction from all preseason features; E11's
 | F1 with activation-only ends | 9.59 | 4.59 | -0.230 |
 | F1 without merging | 7.77 | 3.87 | -0.524 |
 
+
+## Phase 2 numbers you should get
+
+From `results/phase2_results.json` (the paper's primary specification) and, where marked, the post hoc files. Intervals are
+95% club-bootstrap percentiles unless marked.
+
+| quantity | value | 95% CI | source |
+|---|---|---|---|
+| Wins per WAR lost (opening-day control; OLS, season FE, clustered by club) | -0.633 | -0.941 to -0.325 (cluster-robust); BCa -0.984 to -0.359; wild-cluster bootstrap-t -0.968 to -0.305 | `P2_1_preseason_control.wins` |
+| One SD of injury loss, in wins | 2.28 | 1.12 to 3.49 (joint) | `P2_1_preseason_control.one_sd_wins` |
+| 10th to 90th percentile club, in wins | 5.44 | 2.85 to 8.82 (joint) | `P2_1_preseason_control.p10_p90_wins` |
+| P(playoffs), median-projection club, at p10 / p50 / p90 WAR lost | 44% / 34% / 21% | 31% to 59% / 25% to 46% / 12% to 34% | `P2_1_preseason_control.playoffs` |
+| Out-of-sample R², previous season / roster / all preseason features | 0.258 / 0.437 / 0.437 | 0.27 to 0.55 (all) | `P2_1_preseason_control.foreseeability` |
+| SD of the unforeseen part, in wins | 1.74 | 0.90 to 2.51 | `P2_1_preseason_control.unexpected` |
+| ICC of the unforeseen part; calibrated P | -0.025; 0.66 | -0.071 to 0.026 | `P2_5_persistence` |
+| ICC at 80% power (simulated) | 0.149 | — | `P2_5_persistence.simulation.calibrated` |
+| Carry-over share of WAR lost / of year-to-year covariance (post hoc / declared) | 29% / 57% | — | `P2_7_levers, P2_5_persistence` |
+| Declared design range, wins per WAR lost | -0.91 to -0.11 | — | `P2_2_reverse_causality.range` |
+| Activation-only end rule: wins per WAR lost / one SD in wins | -0.442 / 1.72 | — | `P2_3_duration_rule.B_activation_only` |
+| 2026 out-of-sample R² (models fitted through 2025) | 0.642 | — | `P2_8_check_2026.all` |
+| Post hoc: departure end, wins per WAR lost / one SD in wins | -0.719 / 2.58 | — | `phase2_posthoc_departure.json` |
+| Post hoc: design range with each club's opener, without the contention designs, with the windows | -1.03 to -0.29 | — | `phase2_posthoc_opener_extras.json X2` |
+| Post hoc: ICC of WAR lost net of talent only (all / carry-over / new), permutation P | 0.083 (0.005) / 0.079 (0.004) / -0.031 (0.885) | — | `phase2_posthoc_opener_extras.json X6` |
+| Post hoc: club share excluded at 95% (inverted simulation) | above 0.055 | — | `phase2_posthoc_opener_extras.json X7` |
+
 ## What differs from the study run
 
 * The study also estimated a disattenuated wins-per-WAR sensitivity and walked a non-public IL list into the public
@@ -144,17 +199,9 @@ residual of a leave-one-season-out prediction from all preseason features; E11's
 `results/figures/Figure1_war_lost_distribution.png` (WAR lost per club-season, league p10–p90),
 `Figure2_playoff_probability.png` (P(playoffs) against WAR lost for the median-projection club, bootstrap band),
 `Figure3_persistence.png` (unexpected WAR lost in season t against t−1; ICC with its null band, simulation-calibrated for
-the primary).
+the primary). The paper's six figures are in `results/figures/paper/` (`pipeline/paper_figures.py`).
 
 ## License
 
 Code: MIT (`LICENSE`). Data derived from the MLB Stats API is subject to MLB's terms of use. FanGraphs data is not
 included.
-
-## Preregistration and seal (added 2026-10-01)
-
-`SEAL.txt` records the sha256[:16] of the preregistration (`3fd792e537b6834b`, sealed 2026-09-30T19:23:40Z,
-before any E3–E13 quantity was computed). The preregistration document itself names a third-party input that
-is not redistributed here, so it is held in the authors' library and is available to reviewers on request;
-its hash can be checked against `SEAL.txt`. `DEVIATIONS.md` lists every departure from it and
-`RECONCILIATION.md` documents the independent-review data repair that the published values include.

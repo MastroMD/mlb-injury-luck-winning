@@ -2,7 +2,8 @@
 
 The pipeline scripts name their inputs by the logical keys below (the relative paths of the original build, kept
 so that the input hashes recorded in results/injury_luck_results.json keep their names). Each key resolves to
-  * data_public/placements_public.csv   (shipped: the derived public injured-list census), or
+  * data_public/placements_public.csv   (shipped: the derived public injured-list census),
+  * data_public/opening_day_40man_2015_2026.csv   (shipped: opening-day 40-man rosters, Phase 2), or
   * a file in the inputs folder you fill yourself (see README, "Inputs you fetch yourself"):
     $INJURY_LUCK_INPUTS if set, else <repo>/inputs/.
 """
@@ -24,6 +25,7 @@ FILES = {
     "Postseason_Injury_Risk/data/people.csv": ("inputs", "people.csv", "b34f61471c31711d", True),
     "Sweeper_Injury_Risk/data/txns_live.jsonl": ("inputs", "txns_live.jsonl", "f65ea265e77b5735", True),    # R1 episode ends; reconcile_public.py
     "Hot_Hand_Bat_Tracking/repo/results/paper_results.json": ("inputs", "paper_results.json", None, False),  # optional (E10 platoon)
+    "IL_Team_Burden/v2_public/data_public/opening_day_40man_2015_2026.csv": ("data_public", "opening_day_40man_2015_2026.csv", "3a4a5b25d1420e1e", True),  # Phase 2 control
 }
 
 

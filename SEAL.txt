@@ -2,6 +2,7 @@
 sealed_at_utc: 2026-09-30T19:23:40Z
 3fd792e537b6834b  PREREGISTRATION_INJURY_LUCK_2026-09-30.md
 Seen before sealing: the four sealed F1 numbers and the rest of public_twin/out/f1_results.json (reproduced
-byte for byte in this run from framing_f1.py); every v1 value in IL_Team_Burden/results/il_team_burden_results.json
+byte for byte from framing_f1.py before sealing); every v1 value in IL_Team_Burden/results/il_team_burden_results.json
 and the v1 README; the v1.1 taxonomy defect note; descriptive counts of placements_public.csv and input coverage.
 No E3-E13 quantity, no reconciliation step and no persistence statistic had been computed on any build.
+Wording edited 2026-10-02 (log hygiene, DEVIATIONS #18); the hash, the time and the list above are unchanged.

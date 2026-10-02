@@ -1,0 +1,74 @@
+rule A built: 10494 episodes 2012-2026, 8548 in outcome seasons and 2026  4s
+gate passed: primary club-season table equals team_season_public.csv (max abs diff 7.1e-15)
+rule B built  6s
+point values done  6s
+bootstrap 0/2000  6s
+bootstrap 250/2000  16s
+bootstrap 500/2000  24s
+bootstrap 750/2000  33s
+bootstrap 1000/2000  42s
+bootstrap 1250/2000  51s
+bootstrap 1500/2000  59s
+bootstrap 1750/2000  68s
+bootstrap done (0 draws dropped)  77s
+simulation rho=0.0 done  83s
+simulation rho=0.03 done  88s
+simulation rho=0.06 done  92s
+simulation rho=0.11 done  96s
+simulation rho=0.15 done  99s
+simulation rho=0.2 done  103s
+simulation rho=0.25 done  107s
+{
+ "wins": {
+  "est": -0.6329292236993349,
+  "se_cluster": 0.1570691835518087,
+  "lo_cluster": -0.9407791665418984,
+  "hi_cluster": -0.3250792808566144,
+  "n": 270,
+  "r2": 0.46141614165173883,
+  "ci95_bootstrap": [
+   -0.9551227490901913,
+   -0.3400915755392405
+  ],
+  "bca95": [
+   -0.9841668636046341,
+   -0.3589402544359027
+  ],
+  "bca": {
+   "bca95": [
+    -0.9841668636046341,
+    -0.3589402544359027
+   ],
+   "z0": -0.012533469508069276,
+   "acceleration": -0.03508032691170573
+  },
+  "wild_cluster_t": {
+   "ci95": [
+    -0.9676820690642991,
+    -0.30478396086756326
+   ],
+   "reps": 9999,
+   "weights": "Rademacher by club",
+   "seed": 20261004,
+   "residuals": "unrestricted"
+  }
+ },
+ "one_sd_wins": {
+  "est": 2.2809547553004914,
+  "ci95_joint": [
+   1.1214147173409632,
+   3.487157317714928
+  ]
+ },
+ "p10_p90_wins": {
+  "est": 5.436642136753083,
+  "ci95_joint": [
+   2.851403590040905,
+   8.818033410507914
+  ]
+ }
+}
+P2.5 statement: no stable club component detected | calibrated P 0.664 | ICC at 80% power 0.14875
+done in 108s
+reproduction check: 1142 sealed values, 0 differ outside the S1-touched keys
+wrote results/phase2_posthoc_opener.json  108s

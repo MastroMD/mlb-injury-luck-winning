@@ -1,0 +1,5 @@
+rule A built: 10494 episodes 2012-2026, 8548 in outcome seasons and 2026  5s
+gate passed: primary club-season table equals team_season_public.csv (max abs diff 7.1e-15)
+rule B built  9s
+point values done  9s
+wrote results/phase2_posthoc_opener_extras.json  52s

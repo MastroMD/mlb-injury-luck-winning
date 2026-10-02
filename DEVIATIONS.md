@@ -96,3 +96,98 @@ exploratory everywhere; they never replace a preregistered estimate).
     labelled unpublished). Figure 2 title reads "OR (per WAR lost)".
 16. **Scratch tables.** `injury_luck.py --dump-dir` writes the player-season exposure table (contains fWAR) and the
     2012–2025 episodes for the post hoc script; they are not published.
+
+## Phase 2 (2026-10-02), against `PREREGISTRATION_ADDENDUM_PHASE2_2026-10-02.md` (sealed `6634bfeb1212f484`)
+
+**What had been seen before the Phase 2 code ran:** §1 of the addendum. Every entry below says whether Phase 2 output had
+been seen.
+
+17. **Gate re-run (addendum §2), log hygiene.** `injury_luck.py` and `phase1b_posthoc.py` gained a warnings formatter that
+    prints script base names instead of absolute paths, and the Phase 1b note on the roster endpoint was reworded. Both
+    scripts were re-run on the pinned inputs. Every value in `injury_luck_results.json` and `phase1b_results.json` equals the
+    published file within 1e-9, bootstrap intervals included. Three things differ, and none is a value: `meta.runtime_s`;
+    `E10.platoon_one_spot.source_sha16`, because the unpublished platoon source file changed upstream while its two values
+    did not (E10 platoon is not used externally); and the reworded note. In `team_season_public.csv` the three residual columns
+    differ by at most 2.2e-14 (floating point on a different machine). The previous files are kept in `pre_phase2/`. No
+    Phase 2 output had been seen.
+18. **`SEAL.txt` wording.** The phrase that named the build environment was replaced by "before sealing". The hash, the time and the list of
+    what had been seen are unchanged. This is log hygiene only, and no output was involved.
+19. **Development runs before the reported run.** `phase2.py` ran twice while it was being written, with B = 10 and B = 60 and
+    40 null panels. All point values were visible. One code edit preceded the first run (the gate's column comparison was
+    simplified), and no code changed after any output had been seen. The reported values come from one run on the author's
+    machine with B = 2,000, 1,000 null panels and 9,999 wild-cluster replications (`results/phase2_run.log`).
+20. **Seeds and evaluation points not fixed by the addendum.** These were decided while the code was written, before any
+    output.
+    - The P2.5 permutation test uses seed 20261003.
+    - Under P2.3 each rule's P(playoffs) is evaluated at that rule's own p10 and p90 of WAR lost and its own median
+      team_proj_od.
+    - The P2.2 split-season design uses the 270 rows with a previous-season win total, as E12c did.
+    - The bootstrap draws for every Phase 2 statistic are fixed up front from seed 20261002 (a 2,000 × 30 matrix of club
+      indices).
+21. **Descriptive additions, no output seen.** `P2_7_levers.a_carry_over.n_open_prev_on_roster_mean`;
+    `P2_1_preseason_control.figure_curve` (P(playoffs) at the 5th to 95th percentiles of WAR lost, pooled and by format, for
+    Figure 2); and the null-distribution histogram in `P2_5_persistence.simulation.calibrated`, for Figure 4.
+22. **Independent verifier.** `verify_phase2.py` re-implements the R1 episodes (interval union, the
+    `verify_injury_luck.py` method), the Marcel projection, the opening-day control and every checked model. Its first run
+    passed 17 of 17 checks. `negative_control_phase2.py` perturbs three values in a copy of the results, and the verifier fails
+    on exactly those three.
+
+## Phase 2 review (2026-10-02), post hoc
+
+**What had been seen:** every Phase 2 output, the full paper draft and the second internal referee report
+(`REVIEWER2_REPORT_PHASE2.md`). Everything in this section is post hoc. No sealed value was re-fitted or overwritten, and
+`results/phase2_results.json` is unchanged. The point-by-point reply is `REVIEWER2_RESPONSE_PHASE2.md`, written from the
+results files by `pipeline/write_r2_response.py`.
+
+23. **Harness.** `pipeline/phase2_posthoc_r2.py` reads `pipeline/phase2.py` from disk and executes it with four marked
+    substitutions. S1 dates Opening Day by each club's first game. S2 adds the departure end. S3 skips the gate, only under
+    S2. S4 renames the outputs, so the sealed files are never opened for writing. Seeds, the 2,000 × 30 club-draw matrix,
+    the null panels and the wild-cluster weights are those of the sealed run. With S1 alone, every value outside the
+    S1-touched keys equals `phase2_results.json` (the script checks this and stops otherwise). The reported runs were made on
+    the author's machine (`results/phase2_posthoc_*_run.log`). The same four files had been produced earlier on a second
+    machine and agreed apart from run times.
+24. **Opening Day for designs (f) and (g) (S1, correction).** The addendum's design (g) splits placements "dated on or
+    before Opening Day" from in-season onsets. The code, copied from Phase 1b, used the league's first game. In 2019, 2024
+    and 2025 that game was an international opening series about a week before most clubs played. The corrected values are
+    in `results/phase2_posthoc_opener.json`. The paper reports them as post hoc rows of Table 3 beside the sealed rows, and
+    the declared range is still reported.
+25. **Departure end (S2, sensitivity).** An IL placement also ends at the first transaction after it began in which the
+    player leaves the placing club. That covers trades, waiver claims, Rule 5 selections, contract purchases, returns, loans,
+    releases, election of free agency, retirement, deaths, designation for assignment, outright assignment and waivers. A
+    placement from season y is not charged in season y+1 when that club's opening-day 40-man roster for y+1 does not list
+    the player. The rule applies to rule A and rule B for 2012–2026, so the projections are rebuilt. The output is
+    `results/phase2_posthoc_departure.json`. It is reported as a sensitivity, and the paper's primary is unchanged.
+26. **Point analyses (`--extras`)** go to `results/phase2_posthoc_{opener,departure}_extras.json`:
+    - shutdown-free windows (wins before 1 August or 1 September on WAR lost before the same date);
+    - design coefficients and a post hoc range, which drops (c) and both terms of (e) and adds the windows;
+    - talent-control variants and the ratio to the projection's coefficient (club draws of the sealed run);
+    - the foreseeability decomposition, with the projected WAR already on the IL at the club's first game;
+    - the carry-over split by timing and diagnosis family, and 2021 measured against 2020;
+    - persistence net of talent only (seed 20261009 for 4,000 within-season permutations), and of the residual with the
+      opening-day IL feature (seed 20261011);
+    - the inverted simulation, rule A only, with 500 panels per value at seed 20261005;
+    - playoff probabilities at percentiles conditional on the median projection, and the playoff model with the previous
+      season's wins;
+    - checks of the opening-day control (leak candidates, rows without fWAR, the zero floor, later acquisitions);
+    - rank agreement across projections;
+    - the 2026 interval over clubs, single-season R², leave one club out;
+    - the open-on-final-day stress test, season-demeaned visibility R², the depth interaction and the variance shares.
+27. **Paper text and figures.**
+    - Wins and playoff quantities are worded as associations.
+    - "Spread" became "variance" where R² is meant.
+    - The carry-over quantity is defined as WAR lost by players who ended the previous season on the IL.
+    - Section 5 became "Planning quantities".
+    - The comparators no longer call all injury loss "luck".
+    - Figure 3 and Figure 5A were relabelled, and Figure 5A marks 2021.
+    - Table 5 drops its power rows (they are in Table S4) and gains the inverted bound and the net-of-talent panel.
+    - Tables S6 and S7 are new.
+    - The verifier (`paper/verify_paper.py`) checks every new value against the post hoc files.
+28. **Reconciliation before publication (2026-10-02, no value re-fitted).**
+    - **Workload citation.** The addendum names the companion key `D.C3_cum_ext_days_per_30`, which gives HR 1.19
+      (1.06–1.33) and is not adjusted for cumulative regular-season workload. The companion paper and its abstract report the
+      adjusted model, `D.C3_cum_ext_days_per_30_net_of_cumulative_regular_season`, which gives 1.19 (1.06–1.34). The paper keeps
+      the declared key and prints the adjusted value beside it. The build checks the companion file's hash against the one the
+      sealed run recorded.
+    - **Repository link.** SSAC's final review is blind, so the paper no longer prints the repository URL. The link goes on the
+      submission form.
+    - **Seal sentence.** It now says that the hashes reached a public repository only after the analyses had run.

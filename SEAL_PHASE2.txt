@@ -1,0 +1,8 @@
+# Seal: sha256[:16] of the Phase 2 preregistration addendum at sealing
+sealed_at_utc: 2026-10-02T05:35:51Z
+6634bfeb1212f484  PREREGISTRATION_ADDENDUM_PHASE2_2026-10-02.md
+3a4a5b25d1420e1e  data_public/opening_day_40man_2015_2026.csv (new input, declared in the addendum)
+Seen before sealing: everything listed in section 1 of the addendum. No Phase 2 quantity had been computed.
+The time above is self-attested: it was written by the author's own machine when the file was sealed, and no
+external party holds a copy. A verifiable timestamp needs the hash posted somewhere external (for example a commit
+to the public repository) before the Phase 2 results are made public.

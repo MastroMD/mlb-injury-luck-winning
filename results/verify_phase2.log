@@ -1,0 +1,20 @@
+PASS  club-seasons with a roster: recomputed 330 vs JSON 330
+PASS  team_proj_od, 330 club-seasons: max abs difference: recomputed 2.131628207e-14 vs JSON 0
+PASS  n club-seasons (outcome): recomputed 300 vs JSON 300
+PASS  P2.1 wins per WAR lost: recomputed -0.6329292237 vs JSON -0.6329292237
+PASS  P2.1 wins SE (club-clustered): recomputed 0.1570691836 vs JSON 0.1570691836
+PASS  P2.1 one SD in wins: recomputed 2.280954755 vs JSON 2.280954755
+PASS  P2.1 playoff OR per WAR lost: recomputed 0.8817573556 vs JSON 0.8817573556
+PASS  P2.1 P(playoffs) at p10: recomputed 0.435926197 vs JSON 0.435926197
+PASS  P2.1 P(playoffs) at p90: recomputed 0.2097116931 vs JSON 0.2097116931
+PASS  P2.1 OOS R2 (all features): recomputed 0.4373227531 vs JSON 0.4373227531
+PASS  P2.5 ICC(1) of the unforeseen part: recomputed -0.02493501864 vs JSON -0.02493501864
+PASS  P2.7 carry-over share of WAR lost: recomputed 0.2861253656 vs JSON 0.2861253656
+PASS  P2.5 carry-over share of the year-to-year covariance: recomputed 0.5723700967 vs JSON 0.5723700967
+PASS  P2.7 all-player depth reserve (WAR): recomputed 5.218209642 vs JSON 5.218209642
+PASS  P2.7 all-player depth reserve (wins): recomputed 3.302757378 vs JSON 3.302757378
+PASS  P2.8 2026 OOS R2 (all features, fitted through 2025): recomputed 0.6422590242 vs JSON 0.6422590242
+PASS  P2.8 2026 top unexpected club-season: recomputed 7.858841 vs JSON 7.858841 (Detroit Tigers)
+
+17 of 17 checks passed
+verify_phase2: OK
