@@ -1,0 +1,77 @@
+{
+ "meta": {
+  "inputs_sha16": {
+   "Tracking_Forecast_Injury_Synthesis/public_twin/out/placements_public.csv": "e5ed2129cf8218ec",
+   "Sweeper_Injury_Risk/data/txns_live.jsonl": "f65ea265e77b5735",
+   "_staging_tmp/fangraphs_war_2010_2025.csv": "cad855bb7fd170dc",
+   "Postseason_Injury_Risk/data/games_flat.csv": "ad002536e1d8a01b",
+   "Postseason_Injury_Risk/data/standings.csv": "911f807ec5f69104",
+   "Tracking_Forecast_Injury_Synthesis/public_twin/out/f1_results.json": "09b587a6cd01da00"
+  },
+  "f1_reproduced": true,
+  "activation_rule_match_on_census_activation_rows": 0.999288906948395,
+  "note": "public inputs only; the study's walk from a non-public IL list into F1 is not part of this repository"
+ },
+ "one_at_a_time_from_F1": {
+  "F1": {
+   "mean": 7.551516716675745,
+   "sd_within_season": 3.7396783759233356,
+   "p10": 3.3538131001664815,
+   "p90": 12.41560671464528,
+   "wins_per_war_lost": -0.5532556643759053,
+   "wins_per_war_lost_se": 0.15693471649979332,
+   "episodes_per_club_season": 25.76,
+   "games_missed_per_club_season": 1279.2033333333334,
+   "games_missed_per_episode": 49.658514492753625,
+   "n": 270
+  },
+  "F1 with end date counted as a game missed": {
+   "mean": 7.724098502215411,
+   "sd_within_season": 3.8042225559354685,
+   "p10": 3.5055392072342753,
+   "p90": 12.8344031749595,
+   "wins_per_war_lost": -0.550023488862456,
+   "wins_per_war_lost_se": 0.15491321108483672,
+   "episodes_per_club_season": 25.616666666666667,
+   "games_missed_per_club_season": 1296.3066666666666,
+   "games_missed_per_episode": 50.60403383214053,
+   "n": 270
+  },
+  "F1 with COVID-era blank placements kept": {
+   "mean": 7.877627872917337,
+   "sd_within_season": 3.8964282760997073,
+   "p10": 3.498917431514348,
+   "p90": 13.260075881671908,
+   "wins_per_war_lost": -0.515695362554704,
+   "wins_per_war_lost_se": 0.1419482711764616,
+   "episodes_per_club_season": 27.653333333333332,
+   "games_missed_per_club_season": 1330.7466666666667,
+   "games_missed_per_episode": 48.122468659594986,
+   "n": 270
+  },
+  "F1 with activation-only ends": {
+   "mean": 9.592903658143102,
+   "sd_within_season": 4.587748341879181,
+   "p10": 4.408504496547803,
+   "p90": 15.232140801208965,
+   "wins_per_war_lost": -0.2302730702544436,
+   "wins_per_war_lost_se": 0.1643331041281043,
+   "episodes_per_club_season": 26.26,
+   "games_missed_per_club_season": 1615.02,
+   "games_missed_per_episode": 61.5011424219345,
+   "n": 270
+  },
+  "F1 without merging": {
+   "mean": 7.774027346791712,
+   "sd_within_season": 3.867376016459972,
+   "p10": 3.4441013617495013,
+   "p90": 13.229697561192769,
+   "wins_per_war_lost": -0.5237628290088909,
+   "wins_per_war_lost_se": 0.14611233173668803,
+   "episodes_per_club_season": 26.32,
+   "games_missed_per_club_season": 1308.1933333333334,
+   "games_missed_per_episode": 49.70339412360689,
+   "n": 270
+  }
+ }
+}

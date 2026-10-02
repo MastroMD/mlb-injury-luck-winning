@@ -1,0 +1,36 @@
+player-seasons 2012-2025 with games missed + games played > team games: 0
+PASS  n club-seasons: recomputed 300 vs JSON 300
+PASS  R1: player-seasons with games missed + games played > team games: recomputed 0 vs JSON 0
+PASS  E1.mean: recomputed 7.311942839 vs JSON 7.311942839
+PASS  E1.sd_within_season: recomputed 3.603806982 vs JSON 3.603806982
+PASS  E1.p10: recomputed 3.270268831 vs JSON 3.270268831
+PASS  E1.p90: recomputed 11.85992141 vs JSON 11.85992141
+PASS  E2.est: recomputed -0.57946125 vs JSON -0.57946125
+PASS  E2.se (cluster): recomputed 0.1644535884 vs JSON 0.1644535884
+PASS  E4.prior_year_only.oos_r2: recomputed 0.2575625275 vs JSON 0.2575625275
+PASS  E4.roster_only.oos_r2: recomputed 0.3154672828 vs JSON 0.3154672828
+PASS  E4.all.oos_r2: recomputed 0.3641454642 vs JSON 0.3641454642
+PASS  E11.primary.icc1: recomputed -0.03383448154 vs JSON -0.03383448154
+PASS  E7.top1_share_mean: recomputed 0.2704255206 vs JSON 0.2704255206
+PASS  E7.top3_share_mean: recomputed 0.5390355168 vs JSON 0.5390355168
+PASS  E7.gini: recomputed 0.2740242449 vs JSON 0.2740242449
+
+Hand walk, five largest episodes (JSON E7.top_episodes):
+  Fernando Tatis Jr. 2022 club 135: placements 2022-04-07; episode 2022-04-07 to 2022-10-05; 161 club games; prior fWAR/exposure [(2021, 6.782, np.int64(140)), (2020, 3.315, 60), (2019, 2.968, np.int64(85))]; rate 0.04330/game; WAR lost 6.971
+PASS  hand walk Fernando Tatis Jr. 2022 games: recomputed 161 vs JSON 161
+PASS  hand walk Fernando Tatis Jr. 2022 WAR lost: recomputed 6.970833816 vs JSON 6.970833816
+  Jacob deGrom 2024 club 140: placements 2024-03-22; episode 2024-03-22 to 2024-09-12; 146 club games; prior fWAR/exposure [(2023, 1.451, np.int64(26)), (2022, 2.232, np.int64(65)), (2021, 5.353, np.int64(80))]; rate 0.04416/game; WAR lost 6.448
+PASS  hand walk Jacob deGrom 2024 games: recomputed 146 vs JSON 146
+PASS  hand walk Jacob deGrom 2024 WAR lost: recomputed 6.44791968 vs JSON 6.44791968
+  Jacob deGrom 2023 club 140: placements 2023-04-29; episode 2023-04-29 to 2023-10-01; 136 club games; prior fWAR/exposure [(2022, 2.232, np.int64(65)), (2021, 5.353, np.int64(80)), (2020, 2.602, 60)]; rate 0.04365/game; WAR lost 5.937
+PASS  hand walk Jacob deGrom 2023 games: recomputed 136 vs JSON 136
+PASS  hand walk Jacob deGrom 2023 WAR lost: recomputed 5.936710397 vs JSON 5.936710397
+  Cliff Lee 2015 club 143: placements 2015-03-16; episode 2015-04-05 to 2015-10-04; 159 club games; prior fWAR/exposure [(2014, 2.131, np.int64(54)), (2013, 5.786, 162), (2012, 5.014, np.int64(143))]; rate 0.03375/game; WAR lost 5.367
+PASS  hand walk Cliff Lee 2015 games: recomputed 159 vs JSON 159
+PASS  hand walk Cliff Lee 2015 WAR lost: recomputed 5.366565535 vs JSON 5.366565535
+  Jacob deGrom 2022 club 121: placements 2022-04-07; episode 2022-04-07 to 2022-08-01; 97 club games; prior fWAR/exposure [(2021, 5.353, np.int64(80)), (2020, 2.602, 60), (2019, 7.565, np.int64(154))]; rate 0.04981/game; WAR lost 4.831
+PASS  hand walk Jacob deGrom 2022 games: recomputed 97 vs JSON 97
+PASS  hand walk Jacob deGrom 2022 WAR lost: recomputed 4.831471942 vs JSON 4.831471942
+
+25 of 25 checks passed
+verify_injury_luck: OK

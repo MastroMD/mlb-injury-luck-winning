@@ -1,0 +1,5 @@
+F1                                               mean 7.552 sd 3.740 wins/WAR -0.553 games/episode 49.7
+F1 with end date counted as a game missed        mean 7.724 sd 3.804 wins/WAR -0.550 games/episode 50.6
+F1 with COVID-era blank placements kept          mean 7.878 sd 3.896 wins/WAR -0.516 games/episode 48.1
+F1 with activation-only ends                     mean 9.593 sd 4.588 wins/WAR -0.230 games/episode 61.5
+F1 without merging                               mean 7.774 sd 3.867 wins/WAR -0.524 games/episode 49.7
