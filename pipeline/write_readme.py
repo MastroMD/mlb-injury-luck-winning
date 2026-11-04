@@ -127,9 +127,13 @@ the exploratory and review analyses the paper quotes (`results/explore_2026-10-1
 `pipeline/paper_figures_rev.py` writes the revised figures (`results/figures/paper_rev/`). `pipeline/fetch_inputs.py` rebuilds
 every Stats API input from the public API and keeps the make-up of each postponed game, which the pinned schedule file had
 dropped (667 games); `pipeline/rerun_variant.py` reruns everything on any input folder. A fresh pull with the pinned schedule's
-games reproduces every headline value; the corrected schedule and Baseball-Reference WAR (`pipeline/bwar_input.py`) move
-them within their intervals (`results/rerun_2026-11-04/headline_comparison.md`). `pipeline/dollars_bref.py` converts the loss
-into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
+games reproduces every wins and playoff value, and values built on age move slightly; the corrected schedule and Baseball-Reference WAR (`pipeline/bwar_input.py`) move
+them within their intervals (`results/rerun_2026-11-04/headline_comparison.md`). With `--projection-sums`, `rerun_variant.py`
+replaces the opening-day talent control by Steamer or ZiPS preseason projections summed over each opening-day roster; those
+projections are licensed (FanGraphs, members) and not included, so build `season,club_id,steamer_pos,zips_pos` from your own
+copy (DEVIATIONS #31 gives the rule); the results are in `results/rerun_2026-11-04/steamer_control/` and `zips_control/`.
+`pipeline/posthoc_r5.py` holds the Opening Day IL analyses (`results/posthoc_r5_2026-11-04.json`). `pipeline/dollars_bref.py`
+converts the loss into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
 """ + f"""
 ## Layout
 
@@ -216,7 +220,9 @@ python3 pipeline/dollars_bref.py   # downloads the Baseball-Reference war_daily 
 python3 pipeline/fetch_inputs.py --out inputs_fresh --emulate-pinned   # fresh pull, pinned schedule's games (about 20 minutes)
 python3 pipeline/fetch_inputs.py --out inputs_corrected   # make-ups kept
 python3 pipeline/rerun_variant.py --inputs inputs_corrected --work rerun_corrected   # copy the FanGraphs and F1 files in first; about 40 minutes
+python3 pipeline/rerun_variant.py --inputs inputs_fresh --work rerun_steamer --projection-sums od_roster_projection_sums.csv --projection-column steamer_pos   # your own Steamer sums
 python3 pipeline/compare_headlines.py published=results corrected=rerun_corrected/results
+python3 pipeline/posthoc_r5.py --schedule inputs_corrected/games_flat.csv [--projections od_roster_projection_sums.csv]   # run in a rerun work folder for the paper's file
 ```
 
 Python 3.10, pandas 2.3, numpy 2.2, scipy 1.15, statsmodels 0.15, matplotlib 3.10 produced the files in `results/` dated

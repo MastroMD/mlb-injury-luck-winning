@@ -1,0 +1,27 @@
+{
+ "label": "post hoc (2026-11-04), DEVIATIONS #31: counts behind the Steamer and ZiPS projection controls (the projections themselves are licensed and not included)",
+ "rule": "per club-season, the sum over the opening-day 40-man roster of each player's preseason projected WAR, negative projections set to zero, players without a projection counted as zero",
+ "seasons": [
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "club_seasons": 330,
+ "roster_rows": 13419,
+ "roster_rows_without_projection": {
+  "steamer": 36,
+  "zips": 126
+ },
+ "max_without_projection_per_roster": {
+  "steamer": 2,
+  "zips": 5
+ }
+}

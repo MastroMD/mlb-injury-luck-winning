@@ -1,0 +1,27 @@
+{
+ "label": "post hoc (2026-11-04): regular-season schedule rebuilt from the Stats API, 2010-2026",
+ "games_played_corrected": 39772,
+ "games_pinned_equivalent": 39105,
+ "makeups_missing_from_pinned": 667,
+ "max_makeups_per_club_season": 15,
+ "makeups_by_season": {
+  "2010": 20,
+  "2011": 48,
+  "2012": 21,
+  "2013": 37,
+  "2014": 35,
+  "2015": 37,
+  "2016": 24,
+  "2017": 38,
+  "2018": 51,
+  "2019": 37,
+  "2020": 67,
+  "2021": 73,
+  "2022": 48,
+  "2023": 39,
+  "2024": 34,
+  "2025": 30,
+  "2026": 28
+ },
+ "corrected_equals_independent_audit_rebuild": true
+}
