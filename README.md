@@ -39,9 +39,11 @@ every Stats API input from the public API and keeps the make-up of each postpone
 dropped (667 games); `pipeline/rerun_variant.py` reruns everything on any input folder. A fresh pull with the pinned schedule's
 games reproduces every wins and playoff value, and values built on age move slightly; the corrected schedule and Baseball-Reference WAR (`pipeline/bwar_input.py`) move
 them within their intervals (`results/rerun_2026-11-04/headline_comparison.md`). With `--projection-sums`, `rerun_variant.py`
-replaces the opening-day talent control by Steamer or ZiPS preseason projections summed over each opening-day roster; those
-projections are licensed (FanGraphs, members) and not included, so build `season,club_id,steamer_pos,zips_pos` from your own
-copy (DEVIATIONS #31 gives the rule); the results are in `results/rerun_2026-11-04/steamer_control/` and `zips_control/`.
+replaces the opening-day talent control by Steamer or ZiPS preseason projections summed over each opening-day roster, and
+with `--projection-players` it replaces the Marcel rate itself by a player's projected WAR over 162 throughout the chain; those
+projections are licensed (FanGraphs, members) and not included, so build `season,club_id,steamer_pos,zips_pos` or
+`season,mlbam,war` from your own copy (DEVIATIONS #31 gives the rules); the results are in
+`results/rerun_2026-11-04/steamer_control/`, `zips_control/`, `steamer_valuation/` and `zips_valuation/`.
 `pipeline/posthoc_r5.py` holds the Opening Day IL analyses (`results/posthoc_r5_2026-11-04.json`). `pipeline/dollars_bref.py`
 converts the loss into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
 
@@ -131,6 +133,7 @@ python3 pipeline/fetch_inputs.py --out inputs_fresh --emulate-pinned   # fresh p
 python3 pipeline/fetch_inputs.py --out inputs_corrected   # make-ups kept
 python3 pipeline/rerun_variant.py --inputs inputs_corrected --work rerun_corrected   # copy the FanGraphs and F1 files in first; about 40 minutes
 python3 pipeline/rerun_variant.py --inputs inputs_fresh --work rerun_steamer --projection-sums od_roster_projection_sums.csv --projection-column steamer_pos   # your own Steamer sums
+python3 pipeline/rerun_variant.py --inputs inputs_fresh --work rerun_steamer_valuation --projection-players steamer_players.csv   # your own Steamer per player
 python3 pipeline/compare_headlines.py published=results corrected=rerun_corrected/results
 python3 pipeline/posthoc_r5.py --schedule inputs_corrected/games_flat.csv [--projections od_roster_projection_sums.csv]   # run in a rerun work folder for the paper's file
 ```

@@ -253,8 +253,19 @@ results files by `pipeline/write_r2_response.py`.
       beside them, −0.570 and −0.700 (`pipeline/posthoc_r5.py --projections`). Holding the primary control fixed, the Steamer
       club projection is 0.23 WAR lower per projected WAR on the Opening Day IL (0.13 to 0.34), ZiPS 0.05 (−0.19 to 0.30);
       under the Steamer control the WAR lost by those players is not associated with wins (−0.15, −0.61 to 0.31) and the rest
-      is (−0.54, −1.12 to 0.03); under ZiPS −0.47 and −0.38. The paper reports this range as the dependence of the size of the
-      association on the talent model.
+      is (−0.54, −1.12 to 0.03); under ZiPS −0.47 and −0.38.
+    - **Steamer and ZiPS as the valuation.** The test the control-only reruns call for: each player's projected WAR over 162
+      replaces the Marcel rate in `injury_luck.py`, `phase1b_posthoc.py` and `phase2.py` (`pipeline/rerun_variant.py
+      --projection-players <csv>` with season, mlbam, war; a player without a projection at zero; the sealed-table gate is
+      reported, not enforced), so WAR lost, the opening-day control, the roster features and the carry-over projection rest on
+      one valuation. Results without the projections in `results/rerun_2026-11-04/steamer_valuation/` and
+      `zips_valuation/`. Wins per WAR lost −0.859 (−1.35 to −0.37) and −0.746 (−1.01 to −0.48), one SD 2.17 and 2.46 wins
+      (published 2.28), playoff probability 47% → 20% and 43% → 20%. The control-only attenuation was therefore the mixed
+      valuation. What does change on Steamer is carry-over, since Steamer already discounts players on the IL at Opening Day:
+      carry-over share 17% (ZiPS 22%, published 29%), slope 0.24 (0.34, 0.39) WAR lost per projected WAR, and the
+      foreseeability R² 0.27 (0.38, 0.44), 2026 0.50 (0.66, 0.64); ICC −0.05 (P = .92) and −0.03 (P = .83); design range
+      −1.41 to −0.09 and −0.85 to −0.12; carry-over against new −1.38 vs −0.74 (P = .14) and −0.88 vs −0.69 (P = .62). The
+      paper's Table S9 carries these two columns; the control-only values appear in Section 4.5 and the table note.
     - **Projected WAR on the IL at Opening Day** (`pipeline/posthoc_r5.py` → `results/posthoc_r5_2026-11-04.json`, written on
       the fresh-pull inputs, where its R² values differ from the X4 values in `results/` by less than 0.001). The X4 feature of
       `phase2_posthoc_r2.py` (opening-day 40-man players with an episode at their club covering its first game): leave-one-
@@ -279,5 +290,5 @@ results files by `pipeline/write_r2_response.py`.
       Day to players who ended the previous season on the IL ($16.9M per club-season), 39% was paid while they were on the IL,
       against 15% for the rest of the roster. In the seasons with near-complete salary coverage (2015–2019, 2023, 2024) the
       figures are $26.7M, 19% and $3.7M per WAR.
-    - `pipeline/compare_headlines.py` writes `results/rerun_2026-11-04/headline_comparison.md` (published values beside the five
+    - `pipeline/compare_headlines.py` writes `results/rerun_2026-11-04/headline_comparison.md` (published values beside the seven
       reruns).

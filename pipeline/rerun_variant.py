@@ -10,11 +10,15 @@ only pass on the sealed inputs). Then it runs the README run order and pipeline/
 
 With --projection-sums, the copy's phase2.py replaces the opening-day talent control (team_proj_od) by an external
 preseason projection summed over each opening-day 40-man roster, one column of a CSV with season, club_id and that column
-(the Steamer and ZiPS reruns of DEVIATIONS #31). WAR lost keeps the Marcel valuation. Those projections are licensed and
+(the Steamer and ZiPS reruns of DEVIATIONS #31). WAR lost keeps the Marcel valuation. With --projection-players, the
+copy's phase2.py replaces the Marcel rate itself by an external projection per team game (projected WAR over 162, zero for
+a player without a projection), from a CSV with season, mlbam and war, in injury_luck.py, phase1b_posthoc.py and phase2.py,
+so that WAR lost, the opening-day control and every roster feature rest on the one valuation (the same-valuation reruns of
+DEVIATIONS #31); the sealed-table gate is then reported, not enforced. Those projections are licensed and
 are not in this repository; build the CSV from your own copy (README).
 
 usage: python3 pipeline/rerun_variant.py --inputs <folder> --work <new folder> [--B 2000]
-           [--projection-sums <csv> --projection-column steamer_pos|zips_pos]
+           [--projection-sums <csv> --projection-column steamer_pos|zips_pos | --projection-players <csv>]
 """
 import argparse, hashlib, os, re, shutil, subprocess, sys
 
@@ -22,9 +26,12 @@ HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.dirname(HERE)
 ap = argparse.ArgumentParser()
 ap.add_argument("--inputs", required=True); ap.add_argument("--work", required=True); ap.add_argument("--B", type=int, default=2000)
 ap.add_argument("--projection-sums", default=None); ap.add_argument("--projection-column", default=None)
+ap.add_argument("--projection-players", default=None)
 a = ap.parse_args()
 if bool(a.projection_sums) != bool(a.projection_column):
     sys.exit("give --projection-sums and --projection-column together")
+if a.projection_sums and a.projection_players:
+    sys.exit("--projection-sums and --projection-players are alternatives")
 if os.path.exists(a.work):
     sys.exit(f"{a.work} exists; give a new folder")
 shutil.copytree(REPO, a.work, ignore=shutil.ignore_patterns(".git", "inputs", "scratch", "__pycache__"))
@@ -55,7 +62,7 @@ for scr in os.listdir(os.path.join(a.work, "pipeline")):
     for key, name, pin in changed:
         s = s.replace(f'"{key}": "{pin}"', f'"{key}": None')
         s = s.replace(f'("inputs", "{name}", "{pin}"', f'("inputs", "{name}", None')
-    if scr == "injury_luck.py" and any(n in ("games_flat.csv", "fangraphs_war_2010_2025.csv") for _, n, _ in changed):
+    if scr == "injury_luck.py" and (any(n in ("games_flat.csv", "fangraphs_war_2010_2025.csv") for _, n, _ in changed) or a.projection_players):
         s = s.replace('    sys.exit(f"F1 GATE FAIL: max abs diff {maxdiff}")', '    print(f"F1 GATE (rerun variant, reported not enforced): max abs diff {maxdiff}")')
         s = s.replace('    sys.exit(f"F1 GATE FAIL: NaN pattern {c}")', '    print(f"F1 GATE (rerun variant): NaN pattern differs {c}")')
     if scr == "phase2.py" and a.projection_sums:
@@ -64,9 +71,26 @@ for scr in os.listdir(os.path.join(a.work, "pipeline")):
         s = s.replace(m, m + '    _PJ = pd.read_csv(os.environ["INJURY_LUCK_PROJECTION_SUMS"]).rename(columns={"club_id": "tid"})'
                       '.set_index(["season", "tid"])[os.environ["INJURY_LUCK_PROJECTION_COLUMN"]].to_dict()   # rerun variant (post hoc)\n'
                       '    T["team_proj_od"] = [_PJ[(s_, t_)] for s_, t_ in zip(T.season, T.tid)]\n')
+    if scr in ("injury_luck.py", "phase1b_posthoc.py") and a.projection_players:
+        import re as _re
+        m = _re.search(r"^(\s*)def rate\(pid, s, k=[^)]*\):\n", s, _re.M)
+        assert m, scr + ": rate() not found"
+        ind = m.group(1)
+        s = s[:m.start()] + (f'{ind}_PP = pd.read_csv(__import__("os").environ["INJURY_LUCK_PROJECTION_PLAYERS"]).set_index(["season", "mlbam"])["war"].to_dict()\n'
+                             + m.group(0) + f'{ind}    return _PP.get((s, pid), 0.0) / 162   # rerun variant (post hoc): an external projection per team game replaces the Marcel rate\n') + s[m.end():]
+    if scr == "phase2.py" and a.projection_players:
+        m = "def age_on(pid, s):\n"
+        assert s.count(m) == 1, "phase2.py age_on not found"
+        s = s.replace(m, '_PP = pd.read_csv(os.environ["INJURY_LUCK_PROJECTION_PLAYERS"]).set_index(["season", "mlbam"])["war"].to_dict()\n\n\n'
+                      'def make_rate(Wd):   # rerun variant (post hoc): an external projection per team game replaces the Marcel rate\n'
+                      '    def rate(pid, s, k=K):\n'
+                      '        return _PP.get((s, pid), 0.0) / 162\n'
+                      '    return rate\n\n\n' + m)
     if s != s0:
         open(q, "w").write(s)
 env = dict(os.environ, INJURY_LUCK_INPUTS=INP)
+if a.projection_players:
+    env.update(INJURY_LUCK_PROJECTION_PLAYERS=os.path.abspath(a.projection_players))
 if a.projection_sums:
     env.update(INJURY_LUCK_PROJECTION_SUMS=os.path.abspath(a.projection_sums), INJURY_LUCK_PROJECTION_COLUMN=a.projection_column)
 B = str(a.B)
