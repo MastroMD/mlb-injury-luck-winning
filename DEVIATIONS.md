@@ -191,3 +191,61 @@ results files by `pipeline/write_r2_response.py`.
     - **Repository link.** SSAC's final review is blind, so the paper no longer prints the repository URL. The link goes on the
       submission form.
     - **Seal sentence.** It now says that the hashes reached a public repository only after the analyses had run.
+
+29. **Revision of the paper for the SSAC full paper (2026-11-01), post hoc, no value re-fitted.** What had been seen: every
+    results file and an internal review of 2026-10-12. Corrections to the paper's text: the Phase 1b organisation-roster values
+    are printed beside the P2.1 primary, as §P2.1 of the addendum requires (wins per WAR lost −0.60, playoff logit slope
+    −0.117); the corrected declared range (#24, −1.03 to −0.11) is quoted; the 2022–2025 realised-roster playoff row is labelled
+    preregistered (`E3.format_2022plus`); the persistence statistic is named ICC(3,1) (the preregistration's ICC(1)); rounding is
+    half-up, which moves one printed value (permutation-test rejections at ρ = 0.15, 70% → 71%, 141 of 200 panels). Post hoc
+    quantities added from the review: the unclassified-family split and net-of-talent dependence by lag
+    (`pipeline/audit/review_posthoc_2026-10-12.py` → `results/review_posthoc_2026-10-12.json`), days against value, the UCL share
+    by family source, slopes by roster slot, the run-scale check, the trend in WAR lost and berths moved per season
+    (`pipeline/audit/explore.py` → `results/explore_2026-10-12.json`, on the tables of `pipeline/audit/indep_recompute.py`).
+    Figures are relabelled only and renumbered by first citation (`pipeline/paper_figures_rev.py`, which runs
+    `pipeline/paper_figures.py` unchanged with label substitutions → `results/figures/paper_rev/`); `pipeline/paper_figures.py`
+    still writes the v1 figures to `results/figures/paper/`.
+
+30. **The paper restructured around three findings, with new post hoc analyses (2026-11-03), no sealed value re-fitted.**
+    `pipeline/posthoc_r4.py` → `results/posthoc_r4_2026-11-03.json`, each an OLS on the 270 club-seasons of the wins model with
+    the primary's controls and club-clustered intervals: Y1 carry-over against new-injury WAR lost (−0.74 and −0.55 wins per WAR,
+    equal slopes not rejected, P = .57); Y2 the club-season's largest episode against the rest (−0.13 and −0.77, P = .35); Y3
+    curvature; Y4 interaction with the opening-day projection; Y5 next-season wins given the earlier season's wins and the next
+    season's projection and WAR lost (0.12, −0.19 to 0.42); Y6 non-qualifying club-seasons within their above-median injury loss
+    of the last wild card (6 of 192, 2 of them ties) and the ten heaviest injury seasons; Y7 a worked example.
+
+31. **Fresh public rebuild, the schedule fixed at the source, Baseball-Reference WAR and salary dollars (2026-11-04), post hoc, no
+    sealed value re-fitted.** The sealed values remain the paper's primary; everything below is a check or an addition.
+    - **Fresh rebuild.** `pipeline/fetch_inputs.py` rebuilds every Stats API input from the public API (schedule, standings,
+      pitcher game logs, people, transactions); `pipeline/rerun_variant.py` reruns the README run order and `posthoc_r4.py` on
+      any input folder without editing the sealed scripts (in its copy, pins of rebuilt files become recorded hashes). With the
+      pinned schedule's games (`--emulate-pinned`) the sealed F1 club-season table is reproduced to 7e-15 and every headline value
+      of the paper is reproduced exactly; values that use roster age move by at most 0.001 (foreseeability R² 0.4373 → 0.4378,
+      unforeseen SD 1.741 → 1.740 wins, ICC −0.0249 → −0.0252) because a fresh pull of people records gives a few different
+      birth dates. `audit/indep_recompute.py` passes 32 of 32 checks on the fresh pull, `audit/review_posthoc_2026-10-12.py`
+      reproduces 51 of 51 values and `posthoc_r4.py` 148 of 148; `audit/explore.py` reproduces every value the paper quotes
+      (the roster-age model X7 moves by up to 0.03). Results: `results/rerun_2026-11-04/fresh_pull_pinned_schedule/`.
+    - **Schedule.** The schedule file the sealed results were built from kept the postponed record of each postponed or
+      suspended game and dropped its make-up, because both share a gamePk: 667 regular-season games 2010–2026 (up to 15 per
+      club-season). `fetch_inputs.py` keeps the make-up (39,772 games, equal game for game and date for date to an independent
+      rebuild). Rerun on the corrected schedule (`results/rerun_2026-11-04/corrected_schedule/`), every headline value moves
+      within its interval: wins per WAR lost −0.633 → −0.634, one SD of injury loss 2.28 → 2.35 wins, playoff probability
+      44% → 21% unchanged between the 10th and 90th percentiles, foreseeability R² 0.437 → 0.437, ICC −0.025 (P = .78), carry-over
+      28.6% → 28.4% of WAR lost and 0.39 per projected WAR, games missed per episode 49.4 → 50.2, declared design range
+      −0.91 to −0.11 → −0.89 to −0.10, carry-over against new-injury wins per WAR −0.76 and −0.54 (P = .51).
+    - **Baseball-Reference WAR** (`pipeline/bwar_input.py`, the published war_daily files in the FanGraphs input layout) for both
+      the projection and WAR lost (`results/rerun_2026-11-04/baseball_reference_war/`): wins per WAR lost −0.594 (cluster-robust
+      −0.851 to −0.338), one SD 2.13 wins, playoff probability 48% → 23%, foreseeability R² 0.454 (2026: 0.668), ICC −0.046
+      (permutation P = .93), carry-over 28.5% of WAR lost and 0.39 per projected WAR, declared design range −0.80 to −0.03,
+      carry-over against new-injury wins per WAR −0.84 and −0.41 (P = .20). Club-season WAR lost correlates 0.95 between the two
+      WAR sources and player-season WAR 0.91.
+    - **Steamer and ZiPS** were not run: historical preseason projections of those systems are not publicly available.
+    - **Dollars** (`pipeline/dollars_bref.py` → `results/dollars_bref_2026-11-04.json`, Baseball-Reference season salaries; a
+      missing salary takes the adjacent season's, else the league minimum; 76% of the dollars rest on listed salaries). Clubs paid
+      a mean of $27.3M a season to players while they were on the IL (10th–90th percentile $10.5M–$52.0M), 19% of the
+      opening-day 40-man salary and $3.7M per WAR lost; 30% of it went to carry-over episodes. Of the salary committed at Opening
+      Day to players who ended the previous season on the IL ($16.9M per club-season), 39% was paid while they were on the IL,
+      against 15% for the rest of the roster. In the seasons with near-complete salary coverage (2015–2019, 2023, 2024) the
+      figures are $26.7M, 19% and $3.7M per WAR.
+    - `pipeline/compare_headlines.py` writes `results/rerun_2026-11-04/headline_comparison.md` (published values beside the three
+      reruns).

@@ -1,0 +1,1470 @@
+{
+ "meta": {
+  "prereg": {
+   "file": "PREREGISTRATION_INJURY_LUCK_2026-09-30.md",
+   "sha16": "3fd792e537b6834b"
+  },
+  "inputs_sha16": {
+   "Tracking_Forecast_Injury_Synthesis/public_twin/out/placements_public.csv": "e5ed2129cf8218ec",
+   "Tracking_Forecast_Injury_Synthesis/public_twin/out/f1_team_season.csv": "95a59b9163749e08",
+   "Tracking_Forecast_Injury_Synthesis/public_twin/out/f1_results.json": "805a40c27bb92365",
+   "_staging_tmp/fangraphs_war_2010_2025.csv": "7a2b6170bfed4afb",
+   "Postseason_Injury_Risk/data/games_flat.csv": "3d006bdc62a9b552",
+   "Postseason_Injury_Risk/data/standings.csv": "dbaeef5e6650c6dc",
+   "Postseason_Injury_Risk/data/inputs/gamelogs_flat.csv": "6a177cabf1968fb0",
+   "Postseason_Injury_Risk/data/people.csv": "17c23135133fb8df",
+   "Sweeper_Injury_Risk/data/txns_live.jsonl": "39704da4b08d6326"
+  },
+  "seed": 20260930,
+  "B": 2000,
+  "episode_rule": "r1",
+  "outcome_seasons": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "K_primary": 100,
+  "wins_per_war_conversion": 0.47348020816686603,
+  "wins_per_war_conversion_source": "repaired E2 coefficient (R1)",
+  "f1_gate": {
+   "passed": true,
+   "max_abs_diff": 13.702241511178045,
+   "rows": 300,
+   "note": "run on the sealed build before any repair"
+  },
+  "n_episodes_outcome_seasons": 7684,
+  "n_club_seasons": 300,
+  "r1_repair": {
+   "placement_end_source_counts": {
+    "census": 9852,
+    "open": 619,
+    "next_season_played_pre2015": 205,
+    "pitcher_appearance": 194,
+    "restricted_or_suspended": 21
+   },
+   "outcome_episodes_changed": 31,
+   "player_seasons_trimmed_by_games_played_cap_2012_2025": 69,
+   "episodes_cut_by_cross_club_overlap_2012_2025": 24,
+   "outcome_episode_end_rules": {
+    "census": 7140,
+    "open": 513,
+    "restricted_or_suspended": 14,
+    "census|cross_club_overlap": 10,
+    "census|games_played_cap": 3,
+    "open|games_played_cap": 1,
+    "pitcher_appearance": 1,
+    "open|cross_club_overlap": 1,
+    "census|restricted_or_suspended": 1
+   }
+  },
+  "runtime_s": 93.7
+ },
+ "E1": {
+  "source": "R1-repaired episodes (Phase 1b defect repair); sealed F1 values in E1.sealed_F1",
+  "mean": 7.531702132415585,
+  "sd_within_season": 3.5897527351687097,
+  "p10": 3.1903609913579096,
+  "p50": 7.056477499687624,
+  "p90": 12.22872585957482,
+  "max": 24.576082344718387,
+  "p10_to_p90_war": 9.03836486821691,
+  "p10_to_p90_wins": 4.279486879291431,
+  "one_sd_wins": 1.6996768723152573,
+  "by_season_mean": {
+   "2015": 6.625506640742705,
+   "2016": 5.969064900626926,
+   "2017": 6.752393404390885,
+   "2018": 7.019553000064762,
+   "2019": 7.503147683356715,
+   "2021": 6.662871975715564,
+   "2022": 7.980218209285748,
+   "2023": 8.539131379833131,
+   "2024": 9.430494825464182,
+   "2025": 8.834639304675234
+  },
+  "brackets_carried": {
+   "marcel_with_zeros": {
+    "mean": 5.537159856991218,
+    "sd_within_season": 2.784459308251836,
+    "p10": 2.4983837121648875,
+    "p90": 9.510189364638435,
+    "max": 19.660953380286088
+   },
+   "same_season_pace": {
+    "mean": 13.297773775123126,
+    "sd_within_season": 7.700039105611703,
+    "p10": 4.673997727005686,
+    "p90": 22.265677437321397,
+    "max": 46.67217354236999
+   },
+   "note": "sealed F1 brackets; not rebuilt under R1"
+  },
+  "K_sensitivity": {
+   "K50": {
+    "mean": 7.84899912819457,
+    "sd_within_season": 3.74747575996125,
+    "p10": 3.308677111082849,
+    "p50": 7.33687899000004,
+    "p90": 12.648194732468275
+   },
+   "K200": {
+    "mean": 6.9859750975484625,
+    "sd_within_season": 3.324271711778111,
+    "p10": 3.007790361166609,
+    "p50": 6.575823764640978,
+    "p90": 11.231681460340717
+   }
+  },
+  "yoy_r2": 0.23762665879184797,
+  "yoy_slope": 0.49555002419956956,
+  "yoy_n": 270,
+  "yoy_r2_carried": 0.22571609657738445,
+  "sealed_F1": {
+   "mean": 7.551516716675745,
+   "sd_within_season": 3.7396783759233356,
+   "p10": 3.3538131001664815,
+   "p90": 12.41560671464528,
+   "max": 22.93792658820316,
+   "one_sd_wins": 2.0689982444236654,
+   "p10_to_p90_wins": 5.013488646615789,
+   "wins_per_war_lost": {
+    "est": -0.5532556643759037,
+    "se": 0.15693471649979304,
+    "lo": -0.8608420566395019,
+    "hi": -0.24566927211230555,
+    "n": 270,
+    "r2": 0.5563610999543606
+   },
+   "yoy_r2": 0.22571609657738445,
+   "note": "sealed F1 values (framing prereg 1898c1f6e60769bd), shown beside the repaired primary"
+  },
+  "ci95": {
+   "sd_within_season": [
+    2.9848917949807716,
+    3.9567926106295923
+   ],
+   "mean": [
+    6.8837298980279495,
+    8.262513432717355
+   ],
+   "p10": [
+    2.9413494759913026,
+    3.7424554831575456
+   ],
+   "p90": [
+    11.198811820616656,
+    13.367862108945992
+   ],
+   "p10_to_p90_wins": [
+    3.7602835029408777,
+    4.79094873232306
+   ],
+   "p10_to_p90_wins_joint": [
+    2.2496340241355273,
+    6.461509396325323
+   ],
+   "one_sd_wins_joint": [
+    0.8537616751360814,
+    2.6166032585255556
+   ]
+  }
+ },
+ "E2": {
+  "source": "F1 OLS specification refitted on R1-repaired episodes",
+  "est": -0.47348020816686603,
+  "se": 0.11765417645673688,
+  "lo": -0.7040781566527907,
+  "hi": -0.2428822596809414,
+  "n": 270,
+  "r2": 0.5257844854233156,
+  "wins_per_war_lost_abs": 0.47348020816686603,
+  "K_sensitivity": {
+   "K50": -0.44458922001155077,
+   "K200": -0.527374791439554
+  },
+  "sealed_F1": {
+   "est": -0.5532556643759037,
+   "se": 0.15693471649979304,
+   "lo": -0.8608420566395019,
+   "hi": -0.24566927211230555,
+   "n": 270,
+   "r2": 0.5563610999543606
+  },
+  "ci95_bootstrap": [
+   -0.7226824263981675,
+   -0.2573942755962477
+  ]
+ },
+ "E3": {
+  "spec": "logit qualified ~ war_lost + team_proj + season FE, 300 rows; P at median team_proj averaged over season FE",
+  "all": {
+   "or_per_war_lost": 0.8733533801708921,
+   "p_at_p10_p50_p90": [
+    0.45560784805099613,
+    0.3354161024923611,
+    0.20338876832701452
+   ],
+   "war_lost_at": [
+    3.1903609913579096,
+    7.056477499687624,
+    12.22872585957482
+   ],
+   "or_ci_cluster_robust": [
+    0.7919626046347794,
+    0.9631087657322784
+   ],
+   "ci95_bootstrap": {
+    "or": [
+     0.7672914569931485,
+     0.956103758308866
+    ],
+    "p10": [
+     0.3233196886161412,
+     0.604225567725938
+    ],
+    "p50": [
+     0.23853404887955604,
+     0.4594732140746097
+    ],
+    "p90": [
+     0.10472120563718763,
+     0.33861517964003673
+    ],
+    "p10_minus_p90": [
+     0.08498379807853342,
+     0.4029706316067962
+    ]
+   },
+   "p10_minus_p90": 0.2522190797239816
+  },
+  "team_proj_median": 34.795126869955766,
+  "qualified_rate": 0.36,
+  "format_2022plus": {
+   "or_per_war_lost": 0.9278096131091768,
+   "p_at_p10_p50_p90": [
+    0.47970570327267825,
+    0.4083573557739279,
+    0.31905234503455315
+   ],
+   "war_lost_at": [
+    3.1903609913579096,
+    7.056477499687624,
+    12.22872585957482
+   ],
+   "n": 120,
+   "ci95_bootstrap": {
+    "or": [
+     0.7417904974658369,
+     1.0850116241899332
+    ],
+    "p10": [
+     0.2516737502259109,
+     0.7236559474486899
+    ],
+    "p50": [
+     0.26932140650047154,
+     0.5518826512144588
+    ],
+    "p90": [
+     0.13578812682646615,
+     0.5085843096411018
+    ]
+   }
+  },
+  "with_W_prev": {
+   "or_per_war_lost": 0.8458020996227619,
+   "n": 270
+  }
+ },
+ "E4": {
+  "seasons": [
+   2016,
+   2017,
+   2018,
+   2019,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "sst": "about the training-fold mean (v1 formula)",
+  "prior_year_only": {
+   "oos_r2": 0.28362342735306467,
+   "n": 240,
+   "oos_r2_season_demeaned": 0.24883497072023553,
+   "oos_r2_incl_2021": 0.23078816074752984,
+   "ci95": [
+    0.14910176779376513,
+    0.4127615977790983
+   ]
+  },
+  "roster_only": {
+   "oos_r2": 0.2948049840137582,
+   "n": 240,
+   "oos_r2_season_demeaned": 0.2935260192557525,
+   "oos_r2_incl_2021": 0.3098551437986541,
+   "ci95": [
+    0.14720178943458187,
+    0.4046390668627789
+   ]
+  },
+  "all": {
+   "oos_r2": 0.3716578950133229,
+   "n": 240,
+   "oos_r2_season_demeaned": 0.3631759465523531,
+   "oos_r2_incl_2021": 0.346136968821422,
+   "ci95": [
+    0.2104031862211243,
+    0.4820895080592305
+   ],
+   "ci95_season_demeaned": [
+    0.22589351175049097,
+    0.47400950145723364
+   ]
+  }
+ },
+ "E5": {
+  "sd_unexpected_oos_war": 2.910983863329567,
+  "sd_unexpected_oos_wins": 1.3782932455796713,
+  "n": 240,
+  "share_of_variance_unexpected": 0.6332365902216026,
+  "sd_war_lost_same_rows": 3.6581103074072603,
+  "sensitivity": {
+   "roster_loso_300": {
+    "sd_war": 3.003158993857027,
+    "sd_wins": 1.421936345569621,
+    "oos_r2": 0.30202988469333536
+   },
+   "roster_insample_300": {
+    "sd_war": 2.9849205980538662,
+    "sd_wins": 1.4133008261281108
+   }
+  },
+  "ci95": {
+   "sd_war": [
+    2.5559767404303244,
+    3.1727131734824625
+   ],
+   "sd_wins": [
+    1.2102043991286178,
+    1.5022168938342346
+   ]
+  }
+ },
+ "E6": {
+  "taxonomy": "v1.1 (FAM_V11, whole-word) on the episode's first-placement dx",
+  "families": [
+   {
+    "family": "Shoulder",
+    "episodes": 1174,
+    "war_lost": 349.17791083360373,
+    "il_days": 84128,
+    "share_war_lost": 0.15453696242658613,
+    "war_per_episode": 0.2974258184272604,
+    "war_per_club_season": 1.1639263694453457
+   },
+   {
+    "family": "Elbow (other)",
+    "episodes": 769,
+    "war_lost": 298.0059508499987,
+    "il_days": 66249,
+    "share_war_lost": 0.13188959839831121,
+    "war_per_episode": 0.38752399330298926,
+    "war_per_club_season": 0.9933531694999957
+   },
+   {
+    "family": "Unstated",
+    "episodes": 653,
+    "war_lost": 190.53983291166233,
+    "il_days": 39472,
+    "share_war_lost": 0.08432792019730426,
+    "war_per_episode": 0.2917914745967264,
+    "war_per_club_season": 0.6351327763722078
+   },
+   {
+    "family": "Hand / wrist / finger",
+    "episodes": 720,
+    "war_lost": 188.36016818678226,
+    "il_days": 29126,
+    "share_war_lost": 0.08336325789983189,
+    "war_per_episode": 0.26161134470386427,
+    "war_per_club_season": 0.6278672272892742
+   },
+   {
+    "family": "UCL / Tommy John",
+    "episodes": 266,
+    "war_lost": 175.58890703664767,
+    "il_days": 36343,
+    "share_war_lost": 0.07771103350858459,
+    "war_per_episode": 0.660108673070104,
+    "war_per_club_season": 0.5852963567888255
+   },
+   {
+    "family": "Knee",
+    "episodes": 468,
+    "war_lost": 158.011879444326,
+    "il_days": 26406,
+    "share_war_lost": 0.06993190324767844,
+    "war_per_episode": 0.33763222103488466,
+    "war_per_club_season": 0.5267062648144201
+   },
+   {
+    "family": "Forearm / flexor",
+    "episodes": 402,
+    "war_lost": 152.18274852789276,
+    "il_days": 28449,
+    "share_war_lost": 0.06735208316896284,
+    "war_per_episode": 0.3785640510644098,
+    "war_per_club_season": 0.5072758284263091
+   },
+   {
+    "family": "Back / neck",
+    "episodes": 614,
+    "war_lost": 146.8748614495703,
+    "il_days": 26965,
+    "share_war_lost": 0.0650029519079703,
+    "war_per_episode": 0.23920987206770405,
+    "war_per_club_season": 0.4895828714985676
+   },
+   {
+    "family": "Hamstring",
+    "episodes": 590,
+    "war_lost": 130.5061162510858,
+    "il_days": 18484,
+    "share_war_lost": 0.057758575665298996,
+    "war_per_episode": 0.2211968072052302,
+    "war_per_club_season": 0.4350203875036194
+   },
+   {
+    "family": "Oblique / core",
+    "episodes": 575,
+    "war_lost": 121.49077910189102,
+    "il_days": 23074,
+    "share_war_lost": 0.05376862448264233,
+    "war_per_episode": 0.2112883114815496,
+    "war_per_club_season": 0.4049692636729701
+   },
+   {
+    "family": "Foot / ankle",
+    "episodes": 405,
+    "war_lost": 109.58913677097335,
+    "il_days": 18399,
+    "share_war_lost": 0.048501270515958685,
+    "war_per_episode": 0.27059046116289714,
+    "war_per_club_season": 0.3652971225699112
+   },
+   {
+    "family": "Hip / groin",
+    "episodes": 387,
+    "war_lost": 89.3543176012096,
+    "il_days": 16384,
+    "share_war_lost": 0.03954587158398933,
+    "war_per_episode": 0.2308897095638491,
+    "war_per_club_season": 0.2978477253373653
+   },
+   {
+    "family": "Calf / quad / leg",
+    "episodes": 292,
+    "war_lost": 78.2174153320057,
+    "il_days": 13673,
+    "share_war_lost": 0.03461697146136767,
+    "war_per_episode": 0.2678678607260469,
+    "war_per_club_season": 0.2607247177733523
+   },
+   {
+    "family": "Lat / teres",
+    "episodes": 128,
+    "war_lost": 36.67793524575351,
+    "il_days": 9454,
+    "share_war_lost": 0.016232689769596645,
+    "war_per_episode": 0.2865463691074493,
+    "war_per_club_season": 0.1222597841525117
+   },
+   {
+    "family": "Illness / other",
+    "episodes": 82,
+    "war_lost": 19.945988098528513,
+    "il_days": 3532,
+    "share_war_lost": 0.008827569894054121,
+    "war_per_episode": 0.2432437572991282,
+    "war_per_club_season": 0.06648662699509504
+   },
+   {
+    "family": "Concussion",
+    "episodes": 159,
+    "war_lost": 14.98669208274423,
+    "il_days": 3896,
+    "share_war_lost": 0.006632715871862582,
+    "war_per_episode": 0.09425592504870585,
+    "war_per_club_season": 0.0499556402758141
+   }
+  ],
+  "elbow_plus_shoulder_share": 0.3641375943334819,
+  "crosstab_placements": {
+   "n": 7313,
+   "n_with_crosswalk": 7215,
+   "agreement": 0.9405405405405406,
+   "n_no_counterpart": {
+    "arm_other": 39,
+    "pec": 25,
+    "ulnar_nerve": 22,
+    "tos": 12
+   },
+   "table": {
+    "ankle_foot": {
+     "Foot / ankle": 360,
+     "Unstated": 2
+    },
+    "arm_other": {
+     "Unstated": 33,
+     "Illness / other": 6
+    },
+    "back": {
+     "Back / neck": 592
+    },
+    "calf_achilles": {
+     "Calf / quad / leg": 184,
+     "Foot / ankle": 30,
+     "Concussion": 1,
+     "Unstated": 1
+    },
+    "core_oblique": {
+     "Oblique / core": 556,
+     "Unstated": 23,
+     "Back / neck": 1
+    },
+    "elbow_other": {
+     "Elbow (other)": 577,
+     "Unstated": 62,
+     "Knee": 1
+    },
+    "forearm_flexor": {
+     "Forearm / flexor": 374,
+     "Elbow (other)": 28
+    },
+    "hamstring_quad": {
+     "Hamstring": 587,
+     "Calf / quad / leg": 91,
+     "Unstated": 10,
+     "Illness / other": 1
+    },
+    "hand_wrist_finger": {
+     "Hand / wrist / finger": 698,
+     "Unstated": 10
+    },
+    "hip_groin": {
+     "Hip / groin": 372,
+     "Unstated": 10,
+     "Shoulder": 6,
+     "Oblique / core": 2,
+     "Knee": 1,
+     "Back / neck": 1
+    },
+    "illness_other": {
+     "Concussion": 189,
+     "Illness / other": 59,
+     "Unstated": 59,
+     "Calf / quad / leg": 1
+    },
+    "knee": {
+     "Knee": 435,
+     "Illness / other": 1
+    },
+    "lat_teres": {
+     "Lat / teres": 118,
+     "Unstated": 1,
+     "Elbow (other)": 1
+    },
+    "pec": {
+     "Unstated": 24,
+     "Illness / other": 1
+    },
+    "shoulder": {
+     "Shoulder": 1071,
+     "Unstated": 123,
+     "Elbow (other)": 2,
+     "Illness / other": 1,
+     "Knee": 1,
+     "Back / neck": 1
+    },
+    "tos": {
+     "Unstated": 8,
+     "Illness / other": 3,
+     "Shoulder": 1
+    },
+    "ucl_graft": {
+     "UCL / Tommy John": 238,
+     "Elbow (other)": 70,
+     "Knee": 1
+    },
+    "ulnar_nerve": {
+     "Unstated": 14,
+     "Elbow (other)": 8
+    },
+    "unspecified": {
+     "Unstated": 255,
+     "Illness / other": 6,
+     "Hip / groin": 1
+    }
+   }
+  },
+  "crosstab_episodes": {
+   "n": 7684,
+   "n_with_crosswalk": 7577,
+   "agreement": 0.9406097400026395,
+   "n_no_counterpart": {
+    "arm_other": 43,
+    "pec": 26,
+    "ulnar_nerve": 25,
+    "tos": 13
+   },
+   "table": {
+    "ankle_foot": {
+     "Foot / ankle": 374,
+     "Unstated": 2
+    },
+    "arm_other": {
+     "Unstated": 37,
+     "Illness / other": 6
+    },
+    "back": {
+     "Back / neck": 611
+    },
+    "calf_achilles": {
+     "Calf / quad / leg": 195,
+     "Foot / ankle": 31,
+     "Concussion": 1,
+     "Unstated": 1
+    },
+    "core_oblique": {
+     "Oblique / core": 573,
+     "Unstated": 24,
+     "Back / neck": 1
+    },
+    "elbow_other": {
+     "Elbow (other)": 649,
+     "Unstated": 61,
+     "Knee": 1
+    },
+    "forearm_flexor": {
+     "Forearm / flexor": 402,
+     "Elbow (other)": 31
+    },
+    "hamstring_quad": {
+     "Hamstring": 590,
+     "Calf / quad / leg": 96,
+     "Unstated": 10,
+     "Illness / other": 1
+    },
+    "hand_wrist_finger": {
+     "Hand / wrist / finger": 720,
+     "Unstated": 10
+    },
+    "hip_groin": {
+     "Hip / groin": 386,
+     "Unstated": 10,
+     "Shoulder": 5,
+     "Oblique / core": 2,
+     "Knee": 1,
+     "Back / neck": 1
+    },
+    "illness_other": {
+     "Concussion": 158,
+     "Unstated": 64,
+     "Illness / other": 61,
+     "Calf / quad / leg": 1
+    },
+    "knee": {
+     "Knee": 464,
+     "Illness / other": 1
+    },
+    "lat_teres": {
+     "Lat / teres": 128,
+     "Unstated": 1,
+     "Elbow (other)": 1
+    },
+    "pec": {
+     "Unstated": 24,
+     "Illness / other": 2
+    },
+    "shoulder": {
+     "Shoulder": 1168,
+     "Unstated": 130,
+     "Elbow (other)": 3,
+     "Illness / other": 1,
+     "Knee": 1,
+     "Back / neck": 1
+    },
+    "tos": {
+     "Unstated": 9,
+     "Illness / other": 3,
+     "Shoulder": 1
+    },
+    "ucl_graft": {
+     "UCL / Tommy John": 266,
+     "Elbow (other)": 75,
+     "Knee": 1
+    },
+    "ulnar_nerve": {
+     "Unstated": 15,
+     "Elbow (other)": 10
+    },
+    "unspecified": {
+     "Unstated": 255,
+     "Illness / other": 7,
+     "Hip / groin": 1
+    }
+   }
+  }
+ },
+ "E7": {
+  "top1_share_mean": 0.2703452073390414,
+  "top3_share_mean": 0.5403968004334566,
+  "gini_club_seasons": 0.2709207648869095,
+  "top_episodes": [
+   {
+    "season": 2022,
+    "tid": 135,
+    "mlbid": 665487,
+    "name": "Fernando Tatis Jr.",
+    "start": "2022-04-07",
+    "end": "2022-10-05",
+    "games_missed": 161,
+    "rate": 0.043444015444015445,
+    "war_lost": 6.994486486486487,
+    "dx": "Left wrist fracture.",
+    "family": "Hand / wrist / finger",
+    "club": "San Diego Padres"
+   },
+   {
+    "season": 2024,
+    "tid": 146,
+    "mlbid": 645261,
+    "name": "Sandy Alcantara",
+    "start": "2024-03-20",
+    "end": "2024-09-29",
+    "games_missed": 161,
+    "rate": 0.032837837837837835,
+    "war_lost": 5.286891891891892,
+    "dx": "Right forearm flexor strain.",
+    "family": "Forearm / flexor",
+    "club": "Miami Marlins"
+   },
+   {
+    "season": 2019,
+    "tid": 114,
+    "mlbid": 446372,
+    "name": "Corey Kluber",
+    "start": "2019-05-02",
+    "end": "2019-09-29",
+    "games_missed": 131,
+    "rate": 0.04029835390946502,
+    "war_lost": 5.279084362139917,
+    "dx": "Right ulna fracture.",
+    "family": "Unstated",
+    "club": "Cleveland Guardians"
+   },
+   {
+    "season": 2023,
+    "tid": 140,
+    "mlbid": 594798,
+    "name": "Jacob deGrom",
+    "start": "2023-04-29",
+    "end": "2023-10-01",
+    "games_missed": 136,
+    "rate": 0.038713513513513514,
+    "war_lost": 5.265037837837838,
+    "dx": "Right elbow inflammation.",
+    "family": "Elbow (other)",
+    "club": "Texas Rangers"
+   },
+   {
+    "season": 2024,
+    "tid": 140,
+    "mlbid": 594798,
+    "name": "Jacob deGrom",
+    "start": "2024-03-22",
+    "end": "2024-09-12",
+    "games_missed": 146,
+    "rate": 0.034,
+    "war_lost": 4.964,
+    "dx": "Right elbow surgery.",
+    "family": "Elbow (other)",
+    "club": "Texas Rangers"
+   },
+   {
+    "season": 2015,
+    "tid": 143,
+    "mlbid": 424324,
+    "name": "Cliff Lee",
+    "start": "2015-04-05",
+    "end": "2015-10-04",
+    "games_missed": 159,
+    "rate": 0.031140290255701454,
+    "war_lost": 4.9513061506565315,
+    "dx": "Left forearm strain",
+    "family": "Forearm / flexor",
+    "club": "Philadelphia Phillies"
+   },
+   {
+    "season": 2021,
+    "tid": 135,
+    "mlbid": 605182,
+    "name": "Mike Clevinger",
+    "start": "2021-04-01",
+    "end": "2021-10-03",
+    "games_missed": 160,
+    "rate": 0.030055643879173293,
+    "war_lost": 4.808903020667727,
+    "dx": "Right posterior elbow impingement.",
+    "family": "Elbow (other)",
+    "club": "San Diego Padres"
+   },
+   {
+    "season": 2022,
+    "tid": 121,
+    "mlbid": 594798,
+    "name": "Jacob deGrom",
+    "start": "2022-04-07",
+    "end": "2022-08-01",
+    "games_missed": 97,
+    "rate": 0.04920133111480865,
+    "war_lost": 4.772529118136439,
+    "dx": "Stress reaction on his right scapula.",
+    "family": "Unstated",
+    "club": "New York Mets"
+   },
+   {
+    "season": 2015,
+    "tid": 140,
+    "mlbid": 506433,
+    "name": "Yu Darvish",
+    "start": "2015-04-05",
+    "end": "2015-10-04",
+    "games_missed": 162,
+    "rate": 0.028916905444126076,
+    "war_lost": 4.684538681948425,
+    "dx": "Recovering from March 2015 Tommy John surgery",
+    "family": "UCL / Tommy John",
+    "club": "Texas Rangers"
+   },
+   {
+    "season": 2024,
+    "tid": 158,
+    "mlbid": 605540,
+    "name": "Brandon Woodruff",
+    "start": "2024-03-20",
+    "end": "2024-09-29",
+    "games_missed": 160,
+    "rate": 0.028315565031982945,
+    "war_lost": 4.530490405117272,
+    "dx": "Right shoulder surgery.",
+    "family": "Shoulder",
+    "club": "Milwaukee Brewers"
+   },
+   {
+    "season": 2025,
+    "tid": 147,
+    "mlbid": 543037,
+    "name": "Gerrit Cole",
+    "start": "2025-03-22",
+    "end": "2025-09-28",
+    "games_missed": 161,
+    "rate": 0.027807646356033455,
+    "war_lost": 4.477031063321387,
+    "dx": "Tommy John surgery recovery.",
+    "family": "UCL / Tommy John",
+    "club": "New York Yankees"
+   },
+   {
+    "season": 2017,
+    "tid": 120,
+    "mlbid": 594809,
+    "name": "Adam Eaton",
+    "start": "2017-04-29",
+    "end": "2017-10-01",
+    "games_missed": 134,
+    "rate": 0.03336729495669893,
+    "war_lost": 4.471217524197656,
+    "dx": "Strained left knee.",
+    "family": "Knee",
+    "club": "Washington Nationals"
+   },
+   {
+    "season": 2023,
+    "tid": 119,
+    "mlbid": 621111,
+    "name": "Walker Buehler",
+    "start": "2023-03-30",
+    "end": "2023-10-01",
+    "games_missed": 162,
+    "rate": 0.026934369602763387,
+    "war_lost": 4.363367875647668,
+    "dx": "Right elbow UCL reconstruction.",
+    "family": "UCL / Tommy John",
+    "club": "Los Angeles Dodgers"
+   },
+   {
+    "season": 2016,
+    "tid": 109,
+    "mlbid": 572041,
+    "name": "AJ Pollock",
+    "start": "2016-04-03",
+    "end": "2016-08-25",
+    "games_missed": 128,
+    "rate": 0.03270207852193995,
+    "war_lost": 4.185866050808314,
+    "dx": "Fractured right elbow",
+    "family": "Elbow (other)",
+    "club": "Arizona Diamondbacks"
+   },
+   {
+    "season": 2015,
+    "tid": 138,
+    "mlbid": 425794,
+    "name": "Adam Wainwright",
+    "start": "2015-04-26",
+    "end": "2015-09-29",
+    "games_missed": 139,
+    "rate": 0.029867906066536203,
+    "war_lost": 4.151638943248532,
+    "dx": "left achilles and left ankle injury",
+    "family": "Foot / ankle",
+    "club": "St. Louis Cardinals"
+   }
+  ]
+ },
+ "E8": {
+  "name": "IL open on the final regular-season day",
+  "share_of_episodes": 0.30726184279021346,
+  "share_of_war_lost": 0.4209090036843586,
+  "n_episodes": 2361
+ },
+ "E9": {
+  "mean_war_lost_per_club_season": {
+   "hitter": 3.054528554244674,
+   "starter": 2.974204529433682,
+   "reliever": 1.5029690487372291,
+   "pitcher, role unknown": 0.0,
+   "unknown": 0.0
+  },
+  "episodes": {
+   "hitter": 3197,
+   "reliever": 2624,
+   "starter": 1793,
+   "unknown": 70
+  }
+ },
+ "E10": {
+  "batting_order": {
+   "wins": 1.0,
+   "source": "Tango, Lichtman & Dolphin, The Book (2007), as cited in IL_Team_Burden v1",
+   "status": "published book; page citation not verified in this build"
+  },
+  "platoon_one_spot": {
+   "status": "source results file absent; cite as unpublished, no value"
+  },
+  "injury_luck_one_sd_wins": 1.6996768723152573,
+  "injury_luck_unexpected_one_sd_wins": 1.3782932455796713
+ },
+ "E11": {
+  "mde_icc_prefit": 0.1098,
+  "mde_icc_prefit_n10": 0.0881,
+  "alpha_one_sided": 0.05,
+  "primary": {
+   "icc1": -0.048875893120382846,
+   "p_perm_one_sided": 0.9405297351324338,
+   "null_q95": 0.059848783169162215,
+   "null_mean": -0.00023845534097115164,
+   "n_club_seasons": 240,
+   "n_seasons": 8,
+   "icc_reml": 1.0530886100233084e-10,
+   "yoy_r": -0.07548862756326331,
+   "yoy_pairs": 180,
+   "split_half_r": -0.38558511724971406,
+   "split_half_spearman_brown": null,
+   "sd_within_season_war": 2.910983863329567,
+   "mde_sd_club_effect_war": 0.964586030570447,
+   "mde_sd_club_effect_wins": 0.45671239454934626,
+   "ci95_icc1": [
+    -0.08769942842949596,
+    -0.004560105192876885
+   ]
+  },
+  "sens_roster_loso_300": {
+   "icc1": 0.027852645272648937,
+   "p_perm_one_sided": 0.14942528735632185,
+   "null_q95": 0.04935775701692596,
+   "null_mean": -0.0003743957161434893,
+   "n_club_seasons": 300,
+   "n_seasons": 10,
+   "icc_reml": 0.02785415688088731,
+   "yoy_r": 0.13278317440699577,
+   "yoy_pairs": 240,
+   "split_half_r": 0.10131226242274816,
+   "split_half_spearman_brown": 0.18398462612206634,
+   "sd_within_season_war": 3.003158993857027,
+   "ci95_icc1": [
+    -0.03948128135873879,
+    0.10062282528441617
+   ]
+  },
+  "sens_roster_insample_300": {
+   "icc1": 0.02652763515874408,
+   "p_perm_one_sided": 0.1629185407296352,
+   "null_q95": 0.05010028772077198,
+   "null_mean": 0.0005067695263701235,
+   "n_club_seasons": 300,
+   "n_seasons": 10,
+   "icc_reml": 0.049260743252073406,
+   "yoy_r": 0.12959712919642116,
+   "yoy_pairs": 240,
+   "split_half_r": 0.09396219382527277,
+   "split_half_spearman_brown": 0.17178325604966999,
+   "sd_within_season_war": 2.9849205980538662,
+   "ci95_icc1": [
+    -0.03981626384696566,
+    0.10105553701526224
+   ]
+  },
+  "verdict": "luck at this precision"
+ },
+ "E12": {
+  "a_pre_aug1": {
+   "wins_per_war_lost": -0.34475958854738953,
+   "playoff": {
+    "or_per_war_lost": 0.9223778148639628,
+    "p_at_p10_p50_p90": [
+     0.3956103979750533,
+     0.3333118058515479,
+     0.2503694053480329
+    ],
+    "war_lost_at": [
+     2.614071513631288,
+     6.024875595305659,
+     11.116659243742832
+    ]
+   },
+   "shift_vs_primary": 0.1287206196194765,
+   "ci95": [
+    -0.6187419826101784,
+    -0.08115040141735956
+   ],
+   "ci95_shift": [
+    0.04862218384043314,
+    0.22701940288472788
+   ],
+   "ci95_or": [
+    0.8194673078795334,
+    1.0252570816268836
+   ]
+  },
+  "b_in_contention": {
+   "wins_per_war_lost": -0.05035472965173269,
+   "playoff": {
+    "or_per_war_lost": 0.9153180581912326,
+    "p_at_p10_p50_p90": [
+     0.4098034792990599,
+     0.3354918968085595,
+     0.24082045275450284
+    ],
+    "war_lost_at": [
+     2.825394772752847,
+     6.521350006579636,
+     11.891614858785656
+    ]
+   },
+   "threshold_games_behind": 10,
+   "share_war_lost_excluded": 0.054612414878040395,
+   "shift_vs_primary": 0.4231254785151333,
+   "ci95": [
+    -0.33474039010650924,
+    0.226509493393144
+   ],
+   "ci95_shift": [
+    0.27242500900776784,
+    0.6240764598915614
+   ],
+   "ci95_or": [
+    0.8169081522093621,
+    1.002539656725802
+   ]
+  },
+  "c_split_season": {
+   "wins_per_war_lost_post_jul1": -0.25971744692476906,
+   "shift_vs_primary": 0.21376276124209698,
+   "ci95": [
+    -0.6473949436381198,
+    0.1499294794630704
+   ],
+   "ci95_shift": [
+    -0.20972385731484802,
+    0.6509529554974643
+   ]
+  },
+  "d_month_profile": {
+   "in_contention": {
+    "<=Apr": 0.5070520027411738,
+    "5": 0.17285399628391981,
+    "6": 0.12701023481693577,
+    "7": 0.09533630041292536,
+    "8": 0.07697107520371452,
+    ">=Sep": 0.020776390541330795
+   },
+   "out_of_contention": {
+    "<=Apr": 0.0029865229511482727,
+    "5": 0.06197264328735279,
+    "6": 0.2789170640765628,
+    "7": 0.20226810034133952,
+    "8": 0.3059048951657145,
+    ">=Sep": 0.14795077417788222
+   },
+   "qualified": {
+    "<=Apr": 0.48964306783214884,
+    "5": 0.16050274119226055,
+    "6": 0.1372641820064838,
+    "7": 0.10599887294497343,
+    "8": 0.0794823648054929,
+    ">=Sep": 0.02710877121864047
+   },
+   "not_qualified": {
+    "<=Apr": 0.47276661836633105,
+    "5": 0.1710024830407299,
+    "6": 0.13399881550563353,
+    "7": 0.097955705243897,
+    "8": 0.09614541070118705,
+    ">=Sep": 0.028130967142221425
+   },
+   "n_out_of_contention_episodes": 936
+  }
+ },
+ "E13": {
+  "B": 2000,
+  "seed": 20260930,
+  "draws_dropped": 0,
+  "method": "club-clustered percentile bootstrap, 30 clubs resampled",
+  "ci95": {
+   "E1.sd_within_season": [
+    2.9848917949807716,
+    3.9567926106295923
+   ],
+   "E1.mean": [
+    6.8837298980279495,
+    8.262513432717355
+   ],
+   "E1.p10": [
+    2.9413494759913026,
+    3.7424554831575456
+   ],
+   "E1.p90": [
+    11.198811820616656,
+    13.367862108945992
+   ],
+   "E1.p10_to_p90_wins": [
+    3.7602835029408777,
+    4.79094873232306
+   ],
+   "E1.p10_to_p90_wins_joint": [
+    2.2496340241355273,
+    6.461509396325323
+   ],
+   "E1.one_sd_wins_joint": [
+    0.8537616751360814,
+    2.6166032585255556
+   ],
+   "E2.est": [
+    -0.7226824263981675,
+    -0.2573942755962477
+   ],
+   "E2.disattenuated": null,
+   "E3.or": [
+    0.7672914569931485,
+    0.956103758308866
+   ],
+   "E3.p10": [
+    0.3233196886161412,
+    0.604225567725938
+   ],
+   "E3.p50": [
+    0.23853404887955604,
+    0.4594732140746097
+   ],
+   "E3.p90": [
+    0.10472120563718763,
+    0.33861517964003673
+   ],
+   "E3.p10_minus_p90": [
+    0.08498379807853342,
+    0.4029706316067962
+   ],
+   "E3_22.or": [
+    0.7417904974658369,
+    1.0850116241899332
+   ],
+   "E3_22.p10": [
+    0.2516737502259109,
+    0.7236559474486899
+   ],
+   "E3_22.p50": [
+    0.26932140650047154,
+    0.5518826512144588
+   ],
+   "E3_22.p90": [
+    0.13578812682646615,
+    0.5085843096411018
+   ],
+   "E4.prior_year_only": [
+    0.14910176779376513,
+    0.4127615977790983
+   ],
+   "E4.roster_only": [
+    0.14720178943458187,
+    0.4046390668627789
+   ],
+   "E4.all": [
+    0.2104031862211243,
+    0.4820895080592305
+   ],
+   "E4.all_demeaned": [
+    0.22589351175049097,
+    0.47400950145723364
+   ],
+   "E5.sd_war": [
+    2.5559767404303244,
+    3.1727131734824625
+   ],
+   "E5.sd_wins": [
+    1.2102043991286178,
+    1.5022168938342346
+   ],
+   "E11.icc1": [
+    -0.08769942842949596,
+    -0.004560105192876885
+   ],
+   "E11.roster_loso_icc1": [
+    -0.03948128135873879,
+    0.10062282528441617
+   ],
+   "E11.roster_insample_icc1": [
+    -0.03981626384696566,
+    0.10105553701526224
+   ],
+   "E12.a": [
+    -0.6187419826101784,
+    -0.08115040141735956
+   ],
+   "E12.b": [
+    -0.33474039010650924,
+    0.226509493393144
+   ],
+   "E12.c": [
+    -0.6473949436381198,
+    0.1499294794630704
+   ],
+   "E12.a_shift": [
+    0.04862218384043314,
+    0.22701940288472788
+   ],
+   "E12.b_shift": [
+    0.27242500900776784,
+    0.6240764598915614
+   ],
+   "E12.c_shift": [
+    -0.20972385731484802,
+    0.6509529554974643
+   ],
+   "E12.a_or": [
+    0.8194673078795334,
+    1.0252570816268836
+   ],
+   "E12.b_or": [
+    0.8169081522093621,
+    1.002539656725802
+   ]
+  }
+ },
+ "figure_support": {
+  "playoff_curve": {
+   "war_lost_grid": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0,
+    10.5,
+    11.0,
+    11.5,
+    12.0,
+    12.5,
+    13.0,
+    13.5,
+    14.0,
+    14.5,
+    15.0,
+    15.5,
+    16.0,
+    16.5,
+    17.0,
+    17.5,
+    18.0,
+    18.5,
+    19.0,
+    19.5,
+    20.0
+   ],
+   "p": [
+    0.559292256710763,
+    0.5431537588840059,
+    0.5269257820925357,
+    0.510641028775567,
+    0.4943326588348329,
+    0.47803403728990795,
+    0.46177847825568646,
+    0.4455989890877392,
+    0.4295280185617973,
+    0.4135972128835535,
+    0.39783718316497163,
+    0.3822772877568607,
+    0.3669454325010665,
+    0.3518678915684382,
+    0.3370691510925261,
+    0.32257177730762804,
+    0.3083963103688398,
+    0.2945611844876525,
+    0.2810826744761284,
+    0.2679748682720313,
+    0.2552496645315383,
+    0.24291679393854537,
+    0.23098386250086217,
+    0.21945641479181555,
+    0.20833801485594428,
+    0.19763034233151539,
+    0.1873333012496093,
+    0.17744513894587657,
+    0.16796257256100283,
+    0.15888092070183332,
+    0.15019423797825107,
+    0.14189545031179282,
+    0.1339764891209556,
+    0.12642842271577742,
+    0.11924158347175134,
+    0.11240568959252807,
+    0.10590996050534497,
+    0.09974322515703,
+    0.09389402268734104,
+    0.08835069514707605,
+    0.08310147209869402
+   ],
+   "lo": [
+    0.4016245000100006,
+    0.39523206229820973,
+    0.38874036494542796,
+    0.38486958947873356,
+    0.3781989393384301,
+    0.36973339432244934,
+    0.36235467290595413,
+    0.3547219193193948,
+    0.3458133875529782,
+    0.3402347866879727,
+    0.32935300858535455,
+    0.3166515872977387,
+    0.30267814679119903,
+    0.2862046821016079,
+    0.27164010732539334,
+    0.2524653509428742,
+    0.2333889632829711,
+    0.21510416943431956,
+    0.1996510881897926,
+    0.18392329580297911,
+    0.16810845123953463,
+    0.15225510258875577,
+    0.13766161805451782,
+    0.12315740069951524,
+    0.10970364414928756,
+    0.0992000434788471,
+    0.08989615228777802,
+    0.08001424627119272,
+    0.07105414968313119,
+    0.06299738129197208,
+    0.05615909814033812,
+    0.04946987306951597,
+    0.043517412252213096,
+    0.03891652206334048,
+    0.03457515498874244,
+    0.030295422721059173,
+    0.026880268250975097,
+    0.023872017640743492,
+    0.021192431485575237,
+    0.01880557573470555,
+    0.016681173667100153
+   ],
+   "hi": [
+    0.717825286908919,
+    0.6909694456681718,
+    0.6664230250594962,
+    0.6380526255938557,
+    0.6138060497917046,
+    0.5861000271227691,
+    0.5603186657773003,
+    0.5359284504654229,
+    0.5139493150866977,
+    0.4897255710867496,
+    0.46924961121893094,
+    0.45046718009188097,
+    0.4340107447221375,
+    0.41774786025100474,
+    0.4051635731138293,
+    0.3900111148243978,
+    0.37810119031272477,
+    0.36607101738214864,
+    0.3541656439667955,
+    0.3448325249766389,
+    0.3367054643541669,
+    0.3286900649965055,
+    0.3216924771159572,
+    0.3153263242873519,
+    0.3084205781844171,
+    0.3039338513359995,
+    0.2969881659179692,
+    0.29369165349452764,
+    0.28831393041688813,
+    0.28389479806631984,
+    0.27907481600882783,
+    0.27401273439899715,
+    0.2657709213683392,
+    0.26007348007709313,
+    0.25577776025099086,
+    0.25199984829301386,
+    0.24914466257655957,
+    0.2461834774505506,
+    0.24097673625734956,
+    0.23729347689550018,
+    0.2329537166355735
+   ],
+   "draws": 1000
+  }
+ }
+}

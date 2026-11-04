@@ -1,0 +1,90 @@
+{
+ "script": "review_posthoc_2026-10-12.py",
+ "status": "post hoc (second cold read, 2026-10-12)",
+ "U1_unclassified": {
+  "share_war_lost": 0.0844848009447856,
+  "episodes": 653,
+  "blank_text": {
+   "episodes": 171,
+   "share_war_lost": 0.02850831609493372
+  },
+  "text_not_classified": {
+   "episodes": 482,
+   "share_war_lost": 0.055976484849851876,
+   "largest_examples": [
+    "Stress reaction on his right scapula",
+    "Right ulna fracture",
+    "Right biceps strain",
+    "Right triceps tendinitis",
+    "Thoracic outlet syndrome",
+    "Non-baseball, medical condition",
+    "Achillies",
+    "Left biceps strain",
+    "Right femoral stress reaction",
+    "Ruptured testicle",
+    "Strained right triceps",
+    "Left biceps strain"
+   ]
+  },
+  "check_family_share_equals_P2_6": true
+ },
+ "U2_net_of_talent_by_lag": {
+  "total": {
+   "r_lag1": 0.2696573224313066,
+   "pairs_lag1": 270,
+   "r_lag2": 0.10361570811857317,
+   "pairs_lag2": 240,
+   "r_lag3plus_pooled": 0.016855201493121724,
+   "pairs_lag3plus": 840,
+   "r_by_lag": {
+    "1": 0.2696573224313066,
+    "2": 0.10361570811857317,
+    "3": 0.009445771479467003,
+    "4": -0.08878951669731525,
+    "5": 0.04324695505898481,
+    "6": 0.019447424662536152,
+    "7": 0.13648822224833287,
+    "8": 0.10067332143746434,
+    "9": -0.018665665397069636
+   }
+  },
+  "carry": {
+   "r_lag1": 0.2538024170839156,
+   "pairs_lag1": 270,
+   "r_lag2": 0.06880520604352368,
+   "pairs_lag2": 240,
+   "r_lag3plus_pooled": 0.030178144865222686,
+   "pairs_lag3plus": 840,
+   "r_by_lag": {
+    "1": 0.2538024170839156,
+    "2": 0.06880520604352368,
+    "3": 0.011055434255110104,
+    "4": -0.029724043557560927,
+    "5": -0.030995385020940753,
+    "6": 0.019064573810067893,
+    "7": 0.07745413642052029,
+    "8": 0.31989868168679086,
+    "9": -0.08208168798186041
+   }
+  },
+  "new": {
+   "r_lag1": -0.0900673466298479,
+   "pairs_lag1": 270,
+   "r_lag2": 0.050552089996500224,
+   "pairs_lag2": 240,
+   "r_lag3plus_pooled": -0.03583803831071168,
+   "pairs_lag3plus": 840,
+   "r_by_lag": {
+    "1": -0.0900673466298479,
+    "2": 0.050552089996500224,
+    "3": 0.09896823195526443,
+    "4": -0.10081363571226216,
+    "5": -0.046934313689015184,
+    "6": -0.07750219002159993,
+    "7": -0.02458409737526722,
+    "8": -0.09385727264585997,
+    "9": -0.35355965860618543
+   }
+  }
+ }
+}

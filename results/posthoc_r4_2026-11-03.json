@@ -1,0 +1,243 @@
+{
+ "label": "post hoc, fourth round (2026-11-03); nothing here was declared in advance",
+ "n_wins_model": 270,
+ "Y0_primary_reproduced": {
+  "wins_per_war_lost": -0.6329292236992536,
+  "sealed": -0.6329292236993349
+ },
+ "Y1_carry_vs_new": {
+  "wl_carry": {
+   "est": -0.7417723438359431,
+   "lo_cluster": -1.0961688855720804,
+   "hi_cluster": -0.38737580209980593,
+   "p": 4.0903273940808966e-05
+  },
+  "wl_new": {
+   "est": -0.554272027817253,
+   "lo_cluster": -1.0540427184478158,
+   "hi_cluster": -0.05450133718669031,
+   "p": 0.029727422769377645
+  },
+  "n": 270,
+  "r2": 0.46188478723325976,
+  "wald_equal_slopes_p": 0.5705992381801411,
+  "share_of_war_lost_carry": 0.2857928233880149
+ },
+ "Y2_concentration": {
+  "wl_top1": {
+   "est": -0.1344477443946137,
+   "lo_cluster": -1.1207711953011104,
+   "hi_cluster": 0.851875706511883,
+   "p": 0.7893408489602675
+  },
+  "wl_rest": {
+   "est": -0.7716435063604822,
+   "lo_cluster": -1.2573964801599118,
+   "hi_cluster": -0.28589053256105246,
+   "p": 0.001848804495599747
+  },
+  "n": 270,
+  "r2": 0.4627068841075679,
+  "wald_equal_slopes_p": 0.34799275178147204,
+  "top1_share_mean": 0.26461435325138405
+ },
+ "Y3_curvature": {
+  "quadratic": {
+   "wl_c": {
+    "est": -0.5728273407909108,
+    "lo_cluster": -0.9695111754709669,
+    "hi_cluster": -0.17614350611085478,
+    "p": 0.004650925005012242
+   },
+   "wl_c2": {
+    "est": -0.01350109980296436,
+    "lo_cluster": -0.07612533236722568,
+    "hi_cluster": 0.049123132761296956,
+    "p": 0.6726259450364023
+   },
+   "n": 270,
+   "r2": 0.461821858288363
+  },
+  "hinge_at_median": {
+   "median_war_lost": 6.673897735232266,
+   "slope_below": {
+    "est": -0.4306423417596364,
+    "lo_cluster": -1.5498655274489086,
+    "hi_cluster": 0.6885808439296359,
+    "p": 0.45076918064922855
+   },
+   "slope_change_above": {
+    "est": -0.26904531724594993,
+    "lo_cluster": -1.6919700402228104,
+    "hi_cluster": 1.1538794057309105,
+    "p": 0.7109442616998636
+   },
+   "slope_above_est": -0.6996876590055863,
+   "n": 270
+  }
+ },
+ "Y4_talent_interaction": {
+  "war_lost": {
+   "est": -0.571717366615448,
+   "lo_cluster": -0.9134187202937774,
+   "hi_cluster": -0.23001601293711865,
+   "p": 0.0010406041262583591
+  },
+  "wl_x_tp": {
+   "est": -0.007844467555420617,
+   "lo_cluster": -0.02955734967871302,
+   "hi_cluster": 0.013868414567871787,
+   "p": 0.4788836728261232
+  },
+  "n": 270,
+  "r2": 0.4622024290762965,
+  "slope_at_projection_p25": -0.5058534327865631,
+  "slope_at_projection_p75": -0.6394549982344138,
+  "projection_sd": 11.810956009909662
+ },
+ "Y5_next_season": {
+  "war_lost_t_on_wins_t_plus_1": {
+   "wl_t": {
+    "est": -0.03787632429518775,
+    "lo_cluster": -0.3284187744645435,
+    "hi_cluster": 0.2526661258741679,
+    "p": 0.798329938544584
+   },
+   "n": 270,
+   "r2": 0.44348122503120935
+  },
+  "with_next_season_war_lost": {
+   "wl_t": {
+    "est": 0.1146761198256738,
+    "lo_cluster": -0.19167027521982813,
+    "hi_cluster": 0.4210225148711757,
+    "p": 0.46314211585750786
+   },
+   "wl_next": {
+    "est": -0.6658031835101115,
+    "lo_cluster": -1.0001950306456038,
+    "hi_cluster": -0.3314113363746192,
+    "p": 9.522062172367723e-05
+   },
+   "n": 270,
+   "r2": 0.4621074715157847
+  }
+ },
+ "Y6_playoff_shortfall": {
+  "non_qualifying_club_seasons": 192,
+  "with_above_median_war_lost": 86,
+  "within_association_of_last_wild_card": 6,
+  "of_which_ties_at_zero_shortfall": 2,
+  "clear_shortfall_covered": 4,
+  "per_season_mean": 0.6,
+  "by_season": {
+   "2016": 1,
+   "2018": 1,
+   "2019": 2,
+   "2025": 2
+  },
+  "definition": "non-qualifying club-seasons with WAR lost above the season median whose WAR lost above the median, times the primary wins coefficient, is at least their shortfall in wins from the last wild card in their league that season (the lowest-win qualifier that did not win its division); a shortfall of 0 is a tie lost on the tiebreak. An association, not a count of places lost."
+ },
+ "Y6_heaviest_club_seasons": [
+  {
+   "season": 2019,
+   "club": "New York Yankees",
+   "war_lost": 22.93792658820316,
+   "wins_above_median": 10.19789144027028,
+   "qualified": 1,
+   "W": 103,
+   "shortfall": null
+  },
+  {
+   "season": 2021,
+   "club": "New York Mets",
+   "war_lost": 19.682962260299053,
+   "wins_above_median": 8.564917174283268,
+   "qualified": 0,
+   "W": 77,
+   "shortfall": 13
+  },
+  {
+   "season": 2016,
+   "club": "Los Angeles Dodgers",
+   "war_lost": 17.746353742037165,
+   "wins_above_median": 7.960629749007481,
+   "qualified": 1,
+   "W": 91,
+   "shortfall": null
+  },
+  {
+   "season": 2024,
+   "club": "Los Angeles Dodgers",
+   "war_lost": 18.45024408141917,
+   "wins_above_median": 6.702896190999079,
+   "qualified": 1,
+   "W": 98,
+   "shortfall": null
+  },
+  {
+   "season": 2017,
+   "club": "New York Mets",
+   "war_lost": 15.494464553407662,
+   "wins_above_median": 6.166034421349507,
+   "qualified": 0,
+   "W": 70,
+   "shortfall": 17
+  },
+  {
+   "season": 2024,
+   "club": "Texas Rangers",
+   "war_lost": 17.380316396486975,
+   "wins_above_median": 6.025707691960517,
+   "qualified": 0,
+   "W": 78,
+   "shortfall": 8
+  },
+  {
+   "season": 2023,
+   "club": "New York Yankees",
+   "war_lost": 16.88170448384078,
+   "wins_above_median": 5.973298329943275,
+   "qualified": 0,
+   "W": 82,
+   "shortfall": 7
+  },
+  {
+   "season": 2022,
+   "club": "Tampa Bay Rays",
+   "war_lost": 16.26366139527176,
+   "wins_above_median": 5.917737451269002,
+   "qualified": 1,
+   "W": 86,
+   "shortfall": null
+  },
+  {
+   "season": 2015,
+   "club": "Texas Rangers",
+   "war_lost": 14.973393980880791,
+   "wins_above_median": 5.749264841679339,
+   "qualified": 1,
+   "W": 88,
+   "shortfall": null
+  },
+  {
+   "season": 2025,
+   "club": "Baltimore Orioles",
+   "war_lost": 16.704525335589285,
+   "wins_above_median": 5.591058603111714,
+   "qualified": 0,
+   "W": 75,
+   "shortfall": 12
+  }
+ ],
+ "Y6_heaviest_club_seasons_note": "shortfall is wins short of the last wild card in the club's league that season",
+ "Y7_examples": {
+  "example_projected_war": 3.0,
+  "example_share_of_season_missed": 0.5,
+  "example_war_lost": 1.5,
+  "example_wins": 0.9493938355490024,
+  "playoff_points_per_war_lost_at_median": 2.8115560803545017,
+  "example_playoff_points": 4.217334120531753,
+  "note": "wins use the primary coefficient; playoff points use the pooled logit slope at the median-club probability"
+ }
+}

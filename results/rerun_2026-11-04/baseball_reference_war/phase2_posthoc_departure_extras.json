@@ -1,0 +1,525 @@
+{
+ "meta": {
+  "label": "POST HOC, in reply to REVIEWER2_REPORT_PHASE2.md; not preregistered; sealed values unchanged",
+  "build": "departure",
+  "substitutions": [
+   "S1 club opener",
+   "S2 departure end",
+   "S3 gate skipped",
+   "S4 output names"
+  ],
+  "runtime_s": 70.3
+ },
+ "B": 2000,
+ "seed": 20261002,
+ "X0_build": {
+  "episodes_outcome_seasons": 7264,
+  "war_lost_total": 2140.4872712420984,
+  "war_lost_mean": 7.1349575708069946,
+  "sd_war_within": 3.550752918656766,
+  "b": -0.6866356987714519,
+  "one_sd_wins": 2.438073711466661,
+  "p10_p90_wins": 6.079063639854859,
+  "episodes_touched": 933,
+  "episodes_touched_by_rule": {
+   "departure": 308,
+   "absent_next_opening_day_roster": 625
+  },
+  "war_lost_removed": 119.0233684825771,
+  "war_lost_removed_share": 0.05267661341797458,
+  "episodes_dropped": 420,
+  "war_lost_2026_removed_share": 0.06732995579401768
+ },
+ "X1_windows": {
+  "before_08-01": {
+   "est": -0.5614328561918089,
+   "lo_cluster": -0.8796773284580728,
+   "hi_cluster": -0.2431883839255451,
+   "n": 270,
+   "mean_games": 104.04,
+   "mean_war_lost": 4.664527886608562
+  },
+  "before_09-01": {
+   "est": -0.5513836389764247,
+   "lo_cluster": -0.8845545949313972,
+   "hi_cluster": -0.21821268302145225,
+   "n": 270,
+   "mean_games": 131.47333333333333,
+   "mean_war_lost": 6.002503226829776
+  }
+ },
+ "X2_designs": {
+  "coefs": {
+   "a_primary.0": {
+    "est": -0.6866356987714483,
+    "lo_cluster": -0.9601571832100958,
+    "hi_cluster": -0.4131142143328007
+   },
+   "b_pre_aug1.0": {
+    "est": -0.5924218671871029,
+    "lo_cluster": -0.8935557117472646,
+    "hi_cluster": -0.29128802262694115
+   },
+   "c_in_contention.0": {
+    "est": -0.12794810371934806,
+    "lo_cluster": -0.43952694294386135,
+    "hi_cluster": 0.18363073550516523
+   },
+   "d_split_season.0": {
+    "est": -0.41505988404028404,
+    "lo_cluster": -0.8981838200342707,
+    "hi_cluster": 0.06806405195370252
+   },
+   "e_contention_split.0": {
+    "est": -0.284727363035494,
+    "lo_cluster": -0.5162814767785834,
+    "hi_cluster": -0.05317324929240466
+   },
+   "e_contention_split.1": {
+    "est": -7.909522715295715,
+    "lo_cluster": -9.352165160171737,
+    "hi_cluster": -6.4668802704196935
+   },
+   "f_inseason_pre_aug1_duration_fixed.0": {
+    "est": -0.8673321872422151,
+    "lo_cluster": -1.970512513891056,
+    "hi_cluster": 0.23584813940662586
+   },
+   "g_opening_day_vs_in_season.0": {
+    "est": -0.6798210768672917,
+    "lo_cluster": -1.1005136920264964,
+    "hi_cluster": -0.25912846170808684
+   },
+   "g_opening_day_vs_in_season.1": {
+    "est": -0.6923115540177268,
+    "lo_cluster": -1.2072302829420405,
+    "hi_cluster": -0.17739282509341325
+   }
+  },
+  "range_prereg_set": {
+   "most_negative": [
+    "f_inseason_pre_aug1_duration_fixed.0",
+    -0.8673321872422151
+   ],
+   "least_negative": [
+    "c_in_contention.0",
+    -0.12794810371934806
+   ],
+   "one_sd_wins": [
+    0.4543121027180737,
+    3.079682295295252
+   ],
+   "p10_p90_wins": [
+    1.1327763273892362,
+    7.678842758356089
+   ]
+  },
+  "range_posthoc_set": {
+   "most_negative": [
+    "f_inseason_pre_aug1_duration_fixed.0",
+    -0.8673321872422151
+   ],
+   "least_negative": [
+    "d_split_season.0",
+    -0.41505988404028404
+   ],
+   "one_sd_wins": [
+    1.4737750946733774,
+    3.079682295295252
+   ],
+   "p10_p90_wins": [
+    3.6746930780706597,
+    7.678842758356089
+   ]
+  },
+  "posthoc_set": [
+   "a_primary.0",
+   "b_pre_aug1.0",
+   "d_split_season.0",
+   "f_inseason_pre_aug1_duration_fixed.0",
+   "g_opening_day_vs_in_season.1",
+   "window_before_08-01",
+   "window_before_09-01"
+  ],
+  "posthoc_set_rule": "drops (c) and the in-contention term of (e), which condition on contention (selected on the outcome); adds the two windows",
+  "share_war_lost_opening_day_placed": 0.29687614087926406
+ },
+ "X3_talent": {
+  "none": {
+   "est": 0.1583615344470894,
+   "lo_cluster": -0.07912894009407531,
+   "hi_cluster": 0.3958520089882541,
+   "n": 270
+  },
+  "realised_roster": {
+   "est": -0.5516327750767231,
+   "lo_cluster": -0.7985817148543846,
+   "hi_cluster": -0.30468383529906173,
+   "n": 270
+  },
+  "opening_day_primary": {
+   "est": -0.6866356987714483,
+   "lo_cluster": -0.9601571832100958,
+   "hi_cluster": -0.4131142143328007,
+   "n": 270
+  },
+  "opening_day_and_realised": {
+   "est": -0.4122962912341105,
+   "lo_cluster": -0.744620394069627,
+   "hi_cluster": -0.07997218839859394,
+   "n": 270
+  },
+  "coef_team_proj_od": {
+   "est": 0.7254768523272422,
+   "lo_cluster": 0.5309749713393275,
+   "hi_cluster": 0.919978733315157
+  },
+  "ratio_abs_b_to_talent_coef": {
+   "est": 0.9464612090224624,
+   "ci95_bootstrap": [
+    0.6604362572291611,
+    1.277912723878425
+   ],
+   "draws_failed": 0
+  }
+ },
+ "X4_foreseeability": {
+  "talent": {
+   "oos_r2": 0.35495573411523706,
+   "oos_r2_season_demeaned": 0.37356127076440526,
+   "sd_unforeseen_war": 2.8711751768796123,
+   "sd_unforeseen_wins": 1.9714513738719797
+  },
+  "talent_prev_il_days": {
+   "oos_r2": 0.4581990346352466,
+   "oos_r2_season_demeaned": 0.44672040760947085,
+   "sd_unforeseen_war": 2.700156694741551,
+   "sd_unforeseen_wins": 1.854023978886279
+  },
+  "roster_features": {
+   "oos_r2": 0.4556581594388406,
+   "oos_r2_season_demeaned": 0.44468773918411175,
+   "sd_unforeseen_war": 2.7058572658506996,
+   "sd_unforeseen_wins": 1.8579381945132054
+  },
+  "all_paper": {
+   "oos_r2": 0.4580544037063018,
+   "oos_r2_season_demeaned": 0.445428236280475,
+   "sd_unforeseen_war": 2.6995681852139635,
+   "sd_unforeseen_wins": 1.8536198872355703
+  },
+  "all_plus_od_il": {
+   "oos_r2": 0.6170694057425321,
+   "oos_r2_season_demeaned": 0.5975564391221626,
+   "sd_unforeseen_war": 2.3068841884647417,
+   "sd_unforeseen_wins": 1.5839890367313016,
+   "icc1": -0.05256466309768431,
+   "p_perm_one_sided": 0.9460269865067467
+  },
+  "od_il_only": {
+   "oos_r2": 0.5236975674434299,
+   "oos_r2_season_demeaned": 0.48922916032814134,
+   "sd_unforeseen_war": 2.600689059316697,
+   "sd_unforeseen_wins": 1.7857259495311901
+  },
+  "V_only": {
+   "oos_r2": 0.22078142241251586,
+   "oos_r2_season_demeaned": 0.15073535111554837,
+   "sd_unforeseen_war": 3.340570470481542,
+   "sd_unforeseen_wins": 2.2937549392943715
+  },
+  "share_model_all_paper": {
+   "oos_r2": 0.1614292131337085
+  },
+  "increment_beyond_talent": 0.15983192944076693,
+  "increment_beyond_talent_with_od_il": 0.4063498979682762,
+  "corr_war_lost_team_proj_od_within_season": 0.6176997294575002,
+  "od_il_proj_mean": 4.4096212905025824,
+  "od_il_n_mean": 4.266666666666667,
+  "sd_total_war": 3.621811945229367,
+  "sd_ratio_unforeseen_to_total": 0.745363985220111
+ },
+ "X5_carry_split": {
+  "carry_war_2016_2025": 496.3977674335813,
+  "parts_share_of_carry": {
+   "continuing": 0.19747441789188425,
+   "same_family_later": 0.07429216212310265,
+   "other_family": 0.728233419985013
+  },
+  "placed_after_club_opener_share": 0.4248823810942161,
+  "same_family_share": 0.27176658001498694,
+  "same_club_share": 0.8350798370846367,
+  "parts_share_of_war_lost": {
+   "continuing": 0.0457960490976871,
+   "same_family_later": 0.017229003840009624,
+   "other_family": 0.16888371573511476
+  },
+  "parts_share_of_yoy_covariance": {
+   "continuing": {
+    "est": 0.11837969154480307,
+    "ci95_bootstrap": [
+     0.07410406422931483,
+     0.1867734263128414
+    ]
+   },
+   "same_family_later": {
+    "est": 0.04066951819733597,
+    "ci95_bootstrap": [
+     0.00860978911350887,
+     0.09515802665003001
+    ]
+   },
+   "other_family": {
+    "est": 0.4188101148280071,
+    "ci95_bootstrap": [
+     0.30027753623710907,
+     0.6127627979515415
+    ]
+   }
+  },
+  "season_2021": {
+   "reference_2019_share": 0.11816018683564697,
+   "reference_2020_share": 0.16419443992838756
+  }
+ },
+ "X6_persistence_net_of_talent": {
+  "total": {
+   "icc1": 0.07569948430626114,
+   "p_perm_one_sided": 0.009247688077980504,
+   "null_q95": 0.04842891531675389,
+   "yoy_r": 0.25424167344319176,
+   "sd_within_war": 2.789288810152773,
+   "club_sd_war": 0.7674320720848045,
+   "club_sd_wins": 0.526946257075573
+  },
+  "carry": {
+   "icc1": 0.0895141610175782,
+   "p_perm_one_sided": 0.0017495626093476631,
+   "null_q95": 0.04424638400604573,
+   "yoy_r": 0.25052046802310013,
+   "sd_within_war": 1.8290704771225408,
+   "club_sd_war": 0.547238082727833,
+   "club_sd_wins": 0.37575320332817524
+  },
+  "new": {
+   "icc1": -0.029756637920202687,
+   "p_perm_one_sided": 0.8775306173456636,
+   "null_q95": 0.04867205354168438,
+   "yoy_r": -0.08265974116903699,
+   "sd_within_war": 2.2288961901750524,
+   "club_sd_war": 0.0,
+   "club_sd_wins": 0.0
+  },
+  "continuing": {
+   "icc1": -0.013270302606813878,
+   "p_perm_one_sided": 0.672831792051987,
+   "null_q95": 0.047299430437061175,
+   "yoy_r": 0.11457361675665273,
+   "sd_within_war": 0.6677423631292415,
+   "club_sd_war": 0.0,
+   "club_sd_wins": 0.0
+  },
+  "residualised_on": "team_proj_od + season effects (in-sample OLS), 10 outcome seasons, 4,000 within-season permutations",
+  "n_club_seasons": 300
+ },
+ "X8_conditional": {
+  "war_p10": {
+   "est": 4.144479956382472,
+   "ci95_bootstrap": [
+    3.6097797069520676,
+    4.583657510852652
+   ]
+  },
+  "war_p50": {
+   "est": 7.286899121406141,
+   "ci95_bootstrap": [
+    6.628384325979056,
+    7.769462676254888
+   ]
+  },
+  "war_p90": {
+   "est": 10.669723403950115,
+   "ci95_bootstrap": [
+    9.931830129732766,
+    11.81054916579232
+   ]
+  },
+  "p10_p90_wins": {
+   "est": 4.480465094274447,
+   "ci95_bootstrap": [
+    2.8770726909531974,
+    6.654599442999915
+   ]
+  },
+  "reserve_war": {
+   "est": 3.3828242825439743,
+   "ci95_bootstrap": [
+    2.7573764220416344,
+    4.461332445230387
+   ]
+  },
+  "reserve_wins": {
+   "est": 2.3227679150656173,
+   "ci95_bootstrap": [
+    1.4631281296773087,
+    3.6315533474690884
+   ]
+  },
+  "p_playoffs_p10": {
+   "est": 0.44762002189289707,
+   "ci95_bootstrap": [
+    0.36581142313554516,
+    0.5336374934454449
+   ]
+  },
+  "p_playoffs_p50": {
+   "est": 0.34921884954019816,
+   "ci95_bootstrap": [
+    0.2885195522862737,
+    0.41348065588079497
+   ]
+  },
+  "p_playoffs_p90": {
+   "est": 0.2559925677535806,
+   "ci95_bootstrap": [
+    0.18056818535869545,
+    0.3396247064455934
+   ]
+  },
+  "drop": {
+   "est": 0.19162745413931648,
+   "ci95_bootstrap": [
+    0.07333186581273436,
+    0.31165015544708236
+   ]
+  },
+  "median_projection": 41.19511049691348,
+  "draws_failed": 0,
+  "playoff_with_W_prev": {
+   "logit_slope": {
+    "est": -0.14937928947926454,
+    "lo_cluster": -0.23207903034802707,
+    "hi_cluster": -0.06667954861050203
+   },
+   "n": 270
+  },
+  "playoff_primary_logit_slope": -0.1330392333936918
+ },
+ "X9_control": {
+  "roster_rows": 13419,
+  "leak_candidates": 1,
+  "share_rows_no_fwar_prior3": 0.1316044414635964,
+  "share_rows_negative_rate": 0.19032714807362694,
+  "negative_war_per_club_mean": -2.3414220463587787,
+  "no_floor": {
+   "est": -0.6944921747792772,
+   "lo_cluster": -0.9636165541850414,
+   "hi_cluster": -0.4253677953735128,
+   "one_sd_wins": 2.4659701165818033,
+   "n": 270
+  },
+  "split_by_opening_day_roster": {
+   "wl_od_roster": {
+    "est": -0.6624903248630739,
+    "lo_cluster": -0.9549621504776524,
+    "hi_cluster": -0.37001849924849545
+   },
+   "wl_acquired": {
+    "est": -1.4436792683920636,
+    "lo_cluster": -5.572413254683243,
+    "hi_cluster": 2.6850547178991153
+   },
+   "acquired_share_of_war_lost": 0.02908480551606109
+  }
+ },
+ "X10_projection": {
+  "K50": {
+   "spearman_within_season_mean": 0.9983092324805339,
+   "spearman_within_season_min": 0.9946607341490545,
+   "sd_war": 3.698520138936349
+  },
+  "K200": {
+   "spearman_within_season_mean": 0.9986651835372637,
+   "spearman_within_season_min": 0.9959955506117909,
+   "sd_war": 3.2965790113929407
+  },
+  "AGE": {
+   "spearman_within_season_mean": 0.9991546162402669,
+   "spearman_within_season_min": 0.9982202447163515,
+   "sd_war": 3.549023019991094
+  }
+ },
+ "X11_check_2026": {
+  "oos_r2_2026": 0.7330272391778625,
+  "ci95_bootstrap_clubs": [
+   0.5917462104757667,
+   0.8392221740890617
+  ],
+  "leave_one_club_out_range": [
+   0.6906840259863829,
+   0.7641590959495927
+  ],
+  "top5_share_of_sse": 0.6318154460186819,
+  "single_season_loso_r2": {
+   "2016": 0.30297639253490993,
+   "2017": 0.40918386461409806,
+   "2018": 0.5169947249836837,
+   "2019": 0.35124997429730864,
+   "2022": 0.3601098395893836,
+   "2023": 0.4524063949486754,
+   "2024": 0.5577328047529273,
+   "2025": 0.6466818553987478
+  },
+  "mean_2026": 9.187617900116106,
+  "mean_training": 7.346287571753849,
+  "mean_predicted": 8.173255398936671
+ },
+ "X12_open_final_day_removed": {
+  "est": -0.28067059231621516,
+  "lo_cluster": -0.7218252223660906,
+  "hi_cluster": 0.16048403773366027,
+  "n": 270,
+  "sd_war": 2.5430086025095235,
+  "one_sd_wins": 0.7137477307315785,
+  "share_war_lost_open_final_day": 0.3871411422762806
+ },
+ "X13_visibility": {
+  "C_on_V_loso_r2": 0.5932084486641365,
+  "C_on_V_loso_r2_season_demeaned": 0.5207035988382809,
+  "C_on_V_loso_r2_without_2021": 0.5965458562272181
+ },
+ "X14_depth": {
+  "wl_c": {
+   "est": -0.6618097801078159,
+   "lo_cluster": -0.9724371681294186,
+   "hi_cluster": -0.35118239208621316
+  },
+  "depth_c": {
+   "est": 2.5527837252599905,
+   "lo_cluster": -1.7202920418107688,
+   "hi_cluster": 6.82585949233075
+  },
+  "wl_x_depth": {
+   "est": -0.47005701933497457,
+   "lo_cluster": -0.9749912871161076,
+   "hi_cluster": 0.03487724844615847
+  },
+  "n": 270,
+  "depth_mean_war": 0.2925039457169219,
+  "depth_sd_war": 0.4588520572356792,
+  "definition": "projected WAR (rate x 162, floored at 0) of opening-day 40-man players outside the top 26 by projection"
+ },
+ "X15_variance": {
+  "var_wins_within_season": 171.4880459770115,
+  "sd_wins_within_season": 13.09534443903678,
+  "share": {
+   "injury_all": 0.034662494337020185,
+   "injury_unforeseen": 0.02003583787301304,
+   "binomial": 0.23616806506401705,
+   "pythagorean": 0.10331433448678458
+  }
+ },
+ "X16_misc": {
+  "mde_club_sd_wins": 0.7302611521079619
+ }
+}

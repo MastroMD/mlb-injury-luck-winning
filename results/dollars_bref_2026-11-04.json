@@ -1,0 +1,103 @@
+{
+ "meta": {
+  "label": "post hoc, exploratory; Baseball-Reference season salaries (war_daily files), not redistributed",
+  "rule": "games missed / 162 of the season salary; missing salary -> previous, else next season (>= minimum) -> league minimum",
+  "salary_source_share_of_paid_il": {
+   "adjacent_season": 0.19523105958176049,
+   "league_minimum": 0.04748151448815417,
+   "listed": 0.7572874259300856
+  },
+  "salary_source_share_of_episodes": {
+   "listed": 0.653045288912025,
+   "adjacent_season": 0.1743883394065591,
+   "league_minimum": 0.17256637168141592
+  },
+  "good_coverage_seasons": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2023,
+   2024
+  ]
+ },
+ "all_outcome_seasons": {
+  "club_seasons": 300,
+  "paid_il_mean_musd": 27.277080622366263,
+  "paid_il_sd_musd": 17.260154930112346,
+  "paid_il_p10_p90_musd": [
+   10.471941308024695,
+   51.955684438271604
+  ],
+  "share_of_opening_day_40man_salary": 0.18948578748138212,
+  "carry_over_share_of_paid_il": 0.2991692390633349,
+  "paid_il_per_war_lost_musd": 3.7304832957857497,
+  "corr_with_war_lost_within_season": 0.6875437422245592
+ },
+ "good_coverage_seasons": {
+  "club_seasons": 210,
+  "paid_il_mean_musd": 26.65534191916521,
+  "paid_il_sd_musd": 16.83956883732052,
+  "paid_il_p10_p90_musd": [
+   10.471941308024695,
+   50.11108893148148
+  ],
+  "share_of_opening_day_40man_salary": 0.19069225094791284,
+  "carry_over_share_of_paid_il": 0.29956063461046595,
+  "paid_il_per_war_lost_musd": 3.6804815027453213,
+  "corr_with_war_lost_within_season": 0.7223735324441417
+ },
+ "by_season": {
+  "2015": {
+   "paid_il_mean_musd": 20.516650245679017,
+   "share_of_opening_day_40man_salary": 0.1619165768521195
+  },
+  "2016": {
+   "paid_il_mean_musd": 19.750780641769552,
+   "share_of_opening_day_40man_salary": 0.1510532986541125
+  },
+  "2017": {
+   "paid_il_mean_musd": 23.74425241440329,
+   "share_of_opening_day_40man_salary": 0.17558819565502187
+  },
+  "2018": {
+   "paid_il_mean_musd": 27.72991259753086,
+   "share_of_opening_day_40man_salary": 0.20444799716150422
+  },
+  "2019": {
+   "paid_il_mean_musd": 25.24453570514404,
+   "share_of_opening_day_40man_salary": 0.1924690699627482
+  },
+  "2021": {
+   "paid_il_mean_musd": 21.528963559259253,
+   "share_of_opening_day_40man_salary": 0.15648187915215958
+  },
+  "2022": {
+   "paid_il_mean_musd": 28.891598071193414,
+   "share_of_opening_day_40man_salary": 0.18889479408294402
+  },
+  "2023": {
+   "paid_il_mean_musd": 33.199506113991774,
+   "share_of_opening_day_40man_salary": 0.2120235194112359
+  },
+  "2024": {
+   "paid_il_mean_musd": 36.401755715637854,
+   "share_of_opening_day_40man_salary": 0.22414411842882465
+  },
+  "2025": {
+   "paid_il_mean_musd": 35.76285115905349,
+   "share_of_opening_day_40man_salary": 0.2097209361320235
+  }
+ },
+ "opening_day_roster_ended_previous_season_on_il": {
+  "player_seasons": 1238,
+  "salary_per_club_season_musd": 16.94831002,
+  "share_of_salary_paid_while_on_il": 0.3861639729528911
+ },
+ "opening_day_roster_other_roster_players": {
+  "player_seasons": 10939,
+  "salary_per_club_season_musd": 127.00486443666667,
+  "share_of_salary_paid_while_on_il": 0.14543038155756585
+ }
+}

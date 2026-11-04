@@ -31,6 +31,15 @@ within 1e-9, then writes `results/phase2_results.json` (2,000 club draws, seed 2
 reproduces every sealed value outside the corrected designs. The internal referee report and the reply are kept with the
 study files and are available on request.
 
+**Post hoc additions (2026-11, `DEVIATIONS.md` #29–31).** None re-fits a sealed value. `pipeline/posthoc_r4.py` holds the
+paper's fourth-round analyses (`results/posthoc_r4_2026-11-03.json`); `pipeline/audit/` holds the independent recompute and
+the exploratory and review analyses the paper quotes (`results/explore_2026-10-12.json`, `results/review_posthoc_2026-10-12.json`);
+`pipeline/paper_figures_rev.py` writes the revised figures (`results/figures/paper_rev/`). `pipeline/fetch_inputs.py` rebuilds
+every Stats API input from the public API and keeps the make-up of each postponed game, which the pinned schedule file had
+dropped (667 games); `pipeline/rerun_variant.py` reruns everything on any input folder. A fresh pull with the pinned schedule's
+games reproduces every headline value; the corrected schedule and Baseball-Reference WAR (`pipeline/bwar_input.py`) move
+them within their intervals (`results/rerun_2026-11-04/headline_comparison.md`). `pipeline/dollars_bref.py` converts the loss
+into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
 
 ## Layout
 
@@ -107,6 +116,17 @@ python3 pipeline/phase2_posthoc_r2.py --build opener --extras
 python3 pipeline/phase2_posthoc_r2.py --build departure --extras
 python3 pipeline/paper_figures.py   # results/figures/paper/
 python3 pipeline/write_readme.py
+# post hoc additions (DEVIATIONS #29-31)
+python3 pipeline/posthoc_r4.py --results results
+python3 pipeline/audit/indep_recompute.py . results   # writes audit_episodes_all.csv and audit_team_season.csv beside results/
+python3 pipeline/audit/explore.py . .   # reads those two tables, writes explore_results.json
+python3 pipeline/audit/review_posthoc_2026-10-12.py results results/review_posthoc_2026-10-12.json
+python3 pipeline/paper_figures_rev.py --results results --out results/figures/paper_rev
+python3 pipeline/dollars_bref.py   # downloads the Baseball-Reference war_daily files to inputs/ if absent
+python3 pipeline/fetch_inputs.py --out inputs_fresh --emulate-pinned   # fresh pull, pinned schedule's games (about 20 minutes)
+python3 pipeline/fetch_inputs.py --out inputs_corrected   # make-ups kept
+python3 pipeline/rerun_variant.py --inputs inputs_corrected --work rerun_corrected   # copy the FanGraphs and F1 files in first; about 40 minutes
+python3 pipeline/compare_headlines.py published=results corrected=rerun_corrected/results
 ```
 
 Python 3.10, pandas 2.3, numpy 2.2, scipy 1.15, statsmodels 0.15, matplotlib 3.10 produced the files in `results/` dated
