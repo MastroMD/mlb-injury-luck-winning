@@ -135,7 +135,9 @@ projections are licensed (FanGraphs, members) and not included, so build `season
 `season,mlbam,war` from your own copy (DEVIATIONS #31 gives the rules); the results are in
 `results/rerun_2026-11-04/steamer_control/`, `zips_control/`, `steamer_valuation/` and `zips_valuation/`.
 `pipeline/posthoc_r5.py` holds the Opening Day IL analyses (`results/posthoc_r5_2026-11-04.json`). `pipeline/descriptives.py` puts injury loss in plain units per valuation, WAR, wins and free-agent dollars
-(`results/descriptives_2026-11-04.json`). `pipeline/dollars_bref.py`
+(`results/descriptives_2026-11-04.json`). `pipeline/postseason_rounds.py` fetches the round each postseason club reached
+(`data_public/postseason_rounds_2015_2025.csv`) and `pipeline/posthoc_r6.py` recomputes the postseason field with every club at
+median injury loss and fits the season-after models (`results/posthoc_r6_2026-11-04.json`). `pipeline/dollars_bref.py`
 converts the loss into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
 """ + f"""
 ## Layout

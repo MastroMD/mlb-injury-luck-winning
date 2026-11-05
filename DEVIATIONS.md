@@ -277,6 +277,21 @@ results files by `pipeline/write_r2_response.py`.
       wins and $5.7M per club and 14 wins and $170M league-wide, a 25% reduction 1.1 wins and $14M per club. These enter the
       abstract, Section 4.1, the Discussion and Supplement S1, with the end-rule caveat (levels are upper-end figures) and the
       note that no club shows a durable reduction. The projections themselves stay out of the repository.
+    - **Postseason berths under median injury luck, champions, the season after** (`pipeline/postseason_rounds.py` →
+      `data_public/postseason_rounds_2015_2025.csv` from the Stats API postseason schedule; `pipeline/posthoc_r6.py` →
+      `results/posthoc_r6_2026-11-04.json`). With every club at its season's median WAR lost and wins moved by the primary
+      coefficient times the difference, the field recomputed under each season's format (division winners, 2 or 3 wild cards, no
+      tiebreakers) changes 10 of 108 berths (4 to 14 across the coefficient's interval) in 7 of 10 seasons and 5 of 60 division
+      titles; the displaced clubs had reached the wild card round once, the division series six times, the LCS twice and the
+      World Series once (2023 Diamondbacks); no champion at the primary coefficient, the 2021 Braves at the upper end. Champions
+      carried above-median injury loss in 8 of 10 seasons (68th percentile on average), the 2024 Dodgers the most of any club.
+      The recomputation reproduces the actual field in 9 of 10 seasons (2024 turns on a tiebreaker). Season after: next-season
+      wins on this season's wins, season-demeaned WAR lost and season effects (270 pairs, club-clustered) give +0.54 per WAR
+      lost (0.21–0.87); heaviest decile +4.7 wins net of wins and season, lightest −5.0; with next season's opening-day
+      projection the term is −0.04 (−0.32 to 0.25). Injury swings are 4% of the variance of the year-to-year change in wins;
+      WAR lost correlates 0.47 between a club's consecutive seasons. In the paper: 4.2 (replacing the fitted-probability berth
+      count as the lead, which stays as a cross-check), new 4.8, abstract, Discussion, Supplement S1, new Table S4
+      (supplementary tables renumbered, now S1–S13).
     - **Projected WAR on the IL at Opening Day** (`pipeline/posthoc_r5.py` → `results/posthoc_r5_2026-11-04.json`, written on
       the fresh-pull inputs, where its R² values differ from the X4 values in `results/` by less than 0.001). The X4 feature of
       `phase2_posthoc_r2.py` (opening-day 40-man players with an episode at their club covering its first game): leave-one-

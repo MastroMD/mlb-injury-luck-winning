@@ -1,0 +1,455 @@
+{
+ "meta": {
+  "label": "post hoc (2026-11-04), DEVIATIONS #31",
+  "wins_per_war_lost": 0.6329292236993372,
+  "ci_cluster": [
+   0.3250792808566095,
+   0.9407791665419027
+  ],
+  "rule": "W_cf = W + b (WAR lost - season median); division winners and 2 or 3 wild cards per league by W_cf; no tiebreakers"
+ },
+ "A_berths": {
+  "primary": {
+   "wins_per_war_lost": 0.6329292236993372,
+   "berths_total": 108,
+   "berths_changed": 10,
+   "seasons_with_a_change": 7,
+   "seasons": 10,
+   "division_titles_changed": 5,
+   "divisions_total": 60,
+   "rule_matches_actual_field_seasons": 9,
+   "displaced_pennant_winners": [
+    {
+     "season": 2023,
+     "club": "Arizona Diamondbacks",
+     "world_series_winner": false
+    }
+   ],
+   "displaced_world_series_winners": 0,
+   "detail": [
+    {
+     "season": 2015,
+     "rule_matches_actual_field": true,
+     "out": [],
+     "in": []
+    },
+    {
+     "season": 2016,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "San Francisco Giants",
+       "W": 87,
+       "war_lost": 5.990547687626825,
+       "W_cf": 87.52003654902961,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "St. Louis Cardinals",
+       "W": 86,
+       "war_lost": 9.112890846983344,
+       "W_cf": 88.49625878100406
+      }
+     ]
+    },
+    {
+     "season": 2017,
+     "rule_matches_actual_field": true,
+     "out": [],
+     "in": []
+    },
+    {
+     "season": 2018,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "Colorado Rockies",
+       "W": 91,
+       "war_lost": 2.822808125033135,
+       "W_cf": 88.90127147112582,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "St. Louis Cardinals",
+       "W": 88,
+       "war_lost": 11.661780856789342,
+       "W_cf": 91.49571562053589
+      }
+     ]
+    },
+    {
+     "season": 2019,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "Tampa Bay Rays",
+       "W": 96,
+       "war_lost": 7.004443081436547,
+       "W_cf": 96.11312409350633,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "Cleveland Guardians",
+       "W": 93,
+       "war_lost": 13.727047732198669,
+       "W_cf": 97.36805703635075
+      }
+     ]
+    },
+    {
+     "season": 2021,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "Boston Red Sox",
+       "W": 92,
+       "war_lost": 5.096373963541908,
+       "W_cf": 91.33263916719496,
+       "last_round": "league_championship",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "Toronto Blue Jays",
+       "W": 91,
+       "war_lost": 7.162018626423825,
+       "W_cf": 91.64004604011149
+      }
+     ]
+    },
+    {
+     "season": 2022,
+     "rule_matches_actual_field": true,
+     "out": [],
+     "in": []
+    },
+    {
+     "season": 2023,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "Arizona Diamondbacks",
+       "W": 84,
+       "war_lost": 3.614161994092144,
+       "W_cf": 81.57588296150873,
+       "last_round": "world_series",
+       "pennant": true,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "Cincinnati Reds",
+       "W": 82,
+       "war_lost": 9.120719413485812,
+       "W_cf": 83.06114407422137
+      }
+     ]
+    },
+    {
+     "season": 2024,
+     "rule_matches_actual_field": false,
+     "out": [
+      {
+       "club": "Detroit Tigers",
+       "W": 86,
+       "war_lost": 3.5578634337560078,
+       "W_cf": 83.27707326863863,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      },
+      {
+       "club": "Kansas City Royals",
+       "W": 86,
+       "war_lost": 3.89298337925313,
+       "W_cf": 83.48918047558828,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      },
+      {
+       "club": "New York Mets",
+       "W": 89,
+       "war_lost": 6.851946597872771,
+       "W_cf": 88.3619947685041,
+       "last_round": "league_championship",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "Texas Rangers",
+       "W": 78,
+       "war_lost": 17.380316396486975,
+       "W_cf": 84.02570769196053
+      },
+      {
+       "club": "Minnesota Twins",
+       "W": 82,
+       "war_lost": 10.503881438534275,
+       "W_cf": 83.67341105220456
+      },
+      {
+       "club": "Atlanta Braves",
+       "W": 89,
+       "war_lost": 14.16035250842419,
+       "W_cf": 92.98769844794906
+      }
+     ]
+    },
+    {
+     "season": 2025,
+     "rule_matches_actual_field": true,
+     "out": [
+      {
+       "club": "Cincinnati Reds",
+       "W": 83,
+       "war_lost": 7.105338195369697,
+       "W_cf": 82.51545253830788,
+       "last_round": "wild_card",
+       "pennant": false,
+       "world_series_winner": false
+      },
+      {
+       "club": "Detroit Tigers",
+       "W": 87,
+       "war_lost": 9.0363508941199,
+       "W_cf": 87.73764690668142,
+       "last_round": "division_series",
+       "pennant": false,
+       "world_series_winner": false
+      }
+     ],
+     "in": [
+      {
+       "club": "Houston Astros",
+       "W": 87,
+       "war_lost": 14.598458631984345,
+       "W_cf": 91.25806743934004
+      },
+      {
+       "club": "New York Mets",
+       "W": 83,
+       "war_lost": 11.072159250810776,
+       "W_cf": 85.0261695094824
+      }
+     ]
+    }
+   ]
+  },
+  "ci_lower": {
+   "wins_per_war_lost": 0.3250792808566095,
+   "berths_total": 108,
+   "berths_changed": 4,
+   "seasons_with_a_change": 3,
+   "seasons": 10,
+   "division_titles_changed": 3,
+   "divisions_total": 60,
+   "rule_matches_actual_field_seasons": 9,
+   "displaced_pennant_winners": [],
+   "displaced_world_series_winners": 0
+  },
+  "ci_upper": {
+   "wins_per_war_lost": 0.9407791665419027,
+   "berths_total": 108,
+   "berths_changed": 14,
+   "seasons_with_a_change": 8,
+   "seasons": 10,
+   "division_titles_changed": 9,
+   "divisions_total": 60,
+   "rule_matches_actual_field_seasons": 9,
+   "displaced_pennant_winners": [
+    {
+     "season": 2021,
+     "club": "Atlanta Braves",
+     "world_series_winner": true
+    },
+    {
+     "season": 2023,
+     "club": "Arizona Diamondbacks",
+     "world_series_winner": false
+    }
+   ],
+   "displaced_world_series_winners": 1
+  },
+  "displaced_by_round_primary": {
+   "wild_card": 1,
+   "division_series": 6,
+   "league_championship": 2,
+   "world_series": 1
+  },
+  "displaced_pennant_winners_primary": [
+   {
+    "season": 2023,
+    "club": "Arizona Diamondbacks",
+    "world_series_winner": false
+   }
+  ],
+  "world_series_winners": [
+   {
+    "season": 2015,
+    "club": "Kansas City Royals",
+    "war_lost": 6.635350283699106,
+    "percentile_within_season": 0.5666666666666667,
+    "W": 95
+   },
+   {
+    "season": 2016,
+    "club": "Chicago Cubs",
+    "war_lost": 4.252420957209029,
+    "percentile_within_season": 0.4,
+    "W": 103
+   },
+   {
+    "season": 2017,
+    "club": "Houston Astros",
+    "war_lost": 6.31499901695229,
+    "percentile_within_season": 0.5666666666666667,
+    "W": 101
+   },
+   {
+    "season": 2018,
+    "club": "Boston Red Sox",
+    "war_lost": 9.977214859343082,
+    "percentile_within_season": 0.7333333333333333,
+    "W": 108
+   },
+   {
+    "season": 2019,
+    "club": "Washington Nationals",
+    "war_lost": 6.393738997175178,
+    "percentile_within_season": 0.4666666666666667,
+    "W": 93
+   },
+   {
+    "season": 2021,
+    "club": "Atlanta Braves",
+    "war_lost": 6.61918719870578,
+    "percentile_within_season": 0.6333333333333333,
+    "W": 88
+   },
+   {
+    "season": 2022,
+    "club": "Houston Astros",
+    "war_lost": 7.253347151468724,
+    "percentile_within_season": 0.6,
+    "W": 106
+   },
+   {
+    "season": 2023,
+    "club": "Texas Rangers",
+    "war_lost": 11.622654461651482,
+    "percentile_within_season": 0.9,
+    "W": 90
+   },
+   {
+    "season": 2024,
+    "club": "Los Angeles Dodgers",
+    "war_lost": 18.45024408141917,
+    "percentile_within_season": 1.0,
+    "W": 98
+   },
+   {
+    "season": 2025,
+    "club": "Los Angeles Dodgers",
+    "war_lost": 16.14866052444167,
+    "percentile_within_season": 0.9666666666666667,
+    "W": 93
+   }
+  ],
+  "world_series_winners_summary": {
+   "n": 10,
+   "mean_percentile_within_season": 0.6833333333333333,
+   "below_season_median": 2,
+   "above_season_median": 8,
+   "heaviest": {
+    "season": 2024,
+    "club": "Los Angeles Dodgers",
+    "rank_in_season": 1,
+    "war_lost": 18.45024408141917
+   },
+   "pennant_mean_percentile": 0.6699999999999999,
+   "qualifiers_mean_percentile": 0.5861111111111112
+  }
+ },
+ "B_season_after": {
+  "n": 270,
+  "seasons": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "W_next_on_W_and_war_lost": {
+   "coef_war_lost": 0.5396431753127426,
+   "se_cluster": 0.17054621075937018,
+   "ci95": [
+    0.2053726022243771,
+    0.8739137484011081
+   ],
+   "coef_W": 0.5195841916949113
+  },
+  "W_next_on_W_proj_this_and_war_lost": {
+   "coef_war_lost": 0.4345746711053401,
+   "se_cluster": 0.22397242158389266,
+   "ci95": [
+    -0.004411275199089515,
+    0.8735606174097696
+   ],
+   "coef_W": 0.48707114916117644
+  },
+  "W_next_on_W_proj_next_and_war_lost": {
+   "coef_war_lost": -0.037876324295176685,
+   "se_cluster": 0.14517613050081696,
+   "ci95": [
+    -0.3224215400767779,
+    0.24666889148642457
+   ],
+   "coef_W": 0.13319983404717708
+  },
+  "deciles_net_of_W_and_season": {
+   "heavy": {
+    "n": 27,
+    "dW_net": 4.740329523248083,
+    "W": 87.29629629629629,
+    "W_next": 89.25925925925925
+   },
+   "light": {
+    "n": 27,
+    "dW_net": -5.032040746659527,
+    "W": 73.5925925925926,
+    "W_next": 71.81481481481481
+   }
+  },
+  "corr_war_lost_consecutive_seasons_within_season": 0.4691991417374671
+ },
+ "C_year_to_year": {
+  "n_pairs": 270,
+  "sd_dW_within_season": 12.358387426236146,
+  "sd_injury_component": 2.3264949569660427,
+  "share_of_variance": 0.03543893149227533,
+  "corr_dW_injury_component": 0.1583927221225942,
+  "note": "injury component = -b times the season-demeaned change in WAR lost between consecutive seasons"
+ }
+}

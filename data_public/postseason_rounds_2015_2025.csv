@@ -1,0 +1,109 @@
+season,tid,club,last_round,last_round_name,won_last_round,world_series_winner,pennant
+2015,118,Kansas City Royals,4,world_series,True,True,True
+2015,121,New York Mets,4,world_series,False,False,True
+2015,112,Chicago Cubs,3,league_championship,False,False,False
+2015,141,Toronto Blue Jays,3,league_championship,False,False,False
+2015,117,Houston Astros,2,division_series,False,False,False
+2015,140,Texas Rangers,2,division_series,False,False,False
+2015,138,St. Louis Cardinals,2,division_series,False,False,False
+2015,119,Los Angeles Dodgers,2,division_series,False,False,False
+2015,147,New York Yankees,1,wild_card,False,False,False
+2015,134,Pittsburgh Pirates,1,wild_card,False,False,False
+2016,112,Chicago Cubs,4,world_series,True,True,True
+2016,114,Cleveland Indians,4,world_series,False,False,True
+2016,141,Toronto Blue Jays,3,league_championship,False,False,False
+2016,119,Los Angeles Dodgers,3,league_championship,False,False,False
+2016,137,San Francisco Giants,2,division_series,False,False,False
+2016,140,Texas Rangers,2,division_series,False,False,False
+2016,111,Boston Red Sox,2,division_series,False,False,False
+2016,120,Washington Nationals,2,division_series,False,False,False
+2016,110,Baltimore Orioles,1,wild_card,False,False,False
+2016,121,New York Mets,1,wild_card,False,False,False
+2017,117,Houston Astros,4,world_series,True,True,True
+2017,119,Los Angeles Dodgers,4,world_series,False,False,True
+2017,147,New York Yankees,3,league_championship,False,False,False
+2017,112,Chicago Cubs,3,league_championship,False,False,False
+2017,109,Arizona Diamondbacks,2,division_series,False,False,False
+2017,111,Boston Red Sox,2,division_series,False,False,False
+2017,114,Cleveland Indians,2,division_series,False,False,False
+2017,120,Washington Nationals,2,division_series,False,False,False
+2017,142,Minnesota Twins,1,wild_card,False,False,False
+2017,115,Colorado Rockies,1,wild_card,False,False,False
+2018,111,Boston Red Sox,4,world_series,True,True,True
+2018,119,Los Angeles Dodgers,4,world_series,False,False,True
+2018,158,Milwaukee Brewers,3,league_championship,False,False,False
+2018,117,Houston Astros,3,league_championship,False,False,False
+2018,115,Colorado Rockies,2,division_series,False,False,False
+2018,147,New York Yankees,2,division_series,False,False,False
+2018,144,Atlanta Braves,2,division_series,False,False,False
+2018,114,Cleveland Indians,2,division_series,False,False,False
+2018,112,Chicago Cubs,1,wild_card,False,False,False
+2018,133,Oakland Athletics,1,wild_card,False,False,False
+2019,120,Washington Nationals,4,world_series,True,True,True
+2019,117,Houston Astros,4,world_series,False,False,True
+2019,138,St. Louis Cardinals,3,league_championship,False,False,False
+2019,147,New York Yankees,3,league_championship,False,False,False
+2019,139,Tampa Bay Rays,2,division_series,False,False,False
+2019,144,Atlanta Braves,2,division_series,False,False,False
+2019,119,Los Angeles Dodgers,2,division_series,False,False,False
+2019,142,Minnesota Twins,2,division_series,False,False,False
+2019,158,Milwaukee Brewers,1,wild_card,False,False,False
+2019,133,Oakland Athletics,1,wild_card,False,False,False
+2021,144,Atlanta Braves,4,world_series,True,True,True
+2021,117,Houston Astros,4,world_series,False,False,True
+2021,111,Boston Red Sox,3,league_championship,False,False,False
+2021,119,Los Angeles Dodgers,3,league_championship,False,False,False
+2021,145,Chicago White Sox,2,division_series,False,False,False
+2021,139,Tampa Bay Rays,2,division_series,False,False,False
+2021,158,Milwaukee Brewers,2,division_series,False,False,False
+2021,137,San Francisco Giants,2,division_series,False,False,False
+2021,147,New York Yankees,1,wild_card,False,False,False
+2021,138,St. Louis Cardinals,1,wild_card,False,False,False
+2022,117,Houston Astros,4,world_series,True,True,True
+2022,143,Philadelphia Phillies,4,world_series,False,False,True
+2022,135,San Diego Padres,3,league_championship,False,False,False
+2022,147,New York Yankees,3,league_championship,False,False,False
+2022,114,Cleveland Guardians,2,division_series,False,False,False
+2022,136,Seattle Mariners,2,division_series,False,False,False
+2022,144,Atlanta Braves,2,division_series,False,False,False
+2022,119,Los Angeles Dodgers,2,division_series,False,False,False
+2022,139,Tampa Bay Rays,1,wild_card,False,False,False
+2022,138,St. Louis Cardinals,1,wild_card,False,False,False
+2022,141,Toronto Blue Jays,1,wild_card,False,False,False
+2022,121,New York Mets,1,wild_card,False,False,False
+2023,140,Texas Rangers,4,world_series,True,True,True
+2023,109,Arizona Diamondbacks,4,world_series,False,False,True
+2023,143,Philadelphia Phillies,3,league_championship,False,False,False
+2023,117,Houston Astros,3,league_championship,False,False,False
+2023,142,Minnesota Twins,2,division_series,False,False,False
+2023,110,Baltimore Orioles,2,division_series,False,False,False
+2023,144,Atlanta Braves,2,division_series,False,False,False
+2023,119,Los Angeles Dodgers,2,division_series,False,False,False
+2023,139,Tampa Bay Rays,1,wild_card,False,False,False
+2023,141,Toronto Blue Jays,1,wild_card,False,False,False
+2023,158,Milwaukee Brewers,1,wild_card,False,False,False
+2023,146,Miami Marlins,1,wild_card,False,False,False
+2024,119,Los Angeles Dodgers,4,world_series,True,True,True
+2024,147,New York Yankees,4,world_series,False,False,True
+2024,121,New York Mets,3,league_championship,False,False,False
+2024,114,Cleveland Guardians,3,league_championship,False,False,False
+2024,116,Detroit Tigers,2,division_series,False,False,False
+2024,118,Kansas City Royals,2,division_series,False,False,False
+2024,135,San Diego Padres,2,division_series,False,False,False
+2024,143,Philadelphia Phillies,2,division_series,False,False,False
+2024,117,Houston Astros,1,wild_card,False,False,False
+2024,110,Baltimore Orioles,1,wild_card,False,False,False
+2024,158,Milwaukee Brewers,1,wild_card,False,False,False
+2024,144,Atlanta Braves,1,wild_card,False,False,False
+2025,119,Los Angeles Dodgers,4,world_series,True,True,True
+2025,141,Toronto Blue Jays,4,world_series,False,False,True
+2025,158,Milwaukee Brewers,3,league_championship,False,False,False
+2025,136,Seattle Mariners,3,league_championship,False,False,False
+2025,116,Detroit Tigers,2,division_series,False,False,False
+2025,112,Chicago Cubs,2,division_series,False,False,False
+2025,147,New York Yankees,2,division_series,False,False,False
+2025,143,Philadelphia Phillies,2,division_series,False,False,False
+2025,114,Cleveland Guardians,1,wild_card,False,False,False
+2025,135,San Diego Padres,1,wild_card,False,False,False
+2025,111,Boston Red Sox,1,wild_card,False,False,False
+2025,113,Cincinnati Reds,1,wild_card,False,False,False
