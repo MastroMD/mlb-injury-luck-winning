@@ -291,7 +291,11 @@ results files by `pipeline/write_r2_response.py`.
       projection the term is −0.04 (−0.32 to 0.25). Injury swings are 4% of the variance of the year-to-year change in wins;
       WAR lost correlates 0.47 between a club's consecutive seasons. In the paper: 4.2 (replacing the fitted-probability berth
       count as the lead, which stays as a cross-check), new 4.8, abstract, Discussion, Supplement S1, new Table S4
-      (supplementary tables renumbered, now S1–S13).
+      (supplementary tables renumbered, now S1–S13). The five division titles that change: 2021 NL West (Giants 107 → Dodgers 106, WAR lost 6.2
+      and 11.0), 2023 AL West (Astros → Rangers, a tie on wins settled by tiebreaker), 2023 AL East (Orioles 101 → Rays 99), 2025
+      AL West (Mariners 90 → Astros 87, 6.7 and 14.6 WAR lost), 2025 AL East (Blue Jays → Yankees, a tie on wins); the division
+      panel of Table S4. At FanGraphs' free-agent rate, with a projected WAR taken as a win, the heaviest decile's 4.7-win rebound
+      is about $50M and each WAR lost this season about $5.7M of next season's free-agent talent (4.8, Discussion).
     - **Projected WAR on the IL at Opening Day** (`pipeline/posthoc_r5.py` → `results/posthoc_r5_2026-11-04.json`, written on
       the fresh-pull inputs, where its R² values differ from the X4 values in `results/` by less than 0.001). The X4 feature of
       `phase2_posthoc_r2.py` (opening-day 40-man players with an episode at their club covering its first game): leave-one-

@@ -251,6 +251,113 @@
       }
      ]
     }
+   ],
+   "division_titles": [
+    {
+     "season": 2021,
+     "division": "NL West",
+     "actual_winner": {
+      "club": "San Francisco Giants",
+      "W": 107,
+      "war_lost": 6.215937648765013,
+      "W_cf": 107.0412437413652,
+      "last_round": "division_series",
+      "still_qualifies": true
+     },
+     "counterfactual_winner": {
+      "club": "Los Angeles Dodgers",
+      "W": 106,
+      "war_lost": 11.042158573565226,
+      "W_cf": 109.09590000470048,
+      "qualified": true
+     },
+     "actual_margin_wins": 1,
+     "counterfactual_margin_wins": 2.054656263335289
+    },
+    {
+     "season": 2023,
+     "division": "AL West",
+     "actual_winner": {
+      "club": "Houston Astros",
+      "W": 90,
+      "war_lost": 11.432676319398134,
+      "W_cf": 92.52444916390678,
+      "last_round": "league_championship",
+      "still_qualifies": true
+     },
+     "counterfactual_winner": {
+      "club": "Texas Rangers",
+      "W": 90,
+      "war_lost": 11.622654461651482,
+      "W_cf": 92.64469188200304,
+      "qualified": true
+     },
+     "actual_margin_wins": 0,
+     "counterfactual_margin_wins": 0.12024271809626441
+    },
+    {
+     "season": 2023,
+     "division": "AL East",
+     "actual_winner": {
+      "club": "Baltimore Orioles",
+      "W": 101,
+      "war_lost": 5.509481946247449,
+      "W_cf": 99.77548634748824,
+      "last_round": "division_series",
+      "still_qualifies": true
+     },
+     "counterfactual_winner": {
+      "club": "Tampa Bay Rays",
+      "W": 99,
+      "war_lost": 8.87950167252322,
+      "W_cf": 99.90847031669142,
+      "qualified": true
+     },
+     "actual_margin_wins": 2,
+     "counterfactual_margin_wins": 0.13298396920318112
+    },
+    {
+     "season": 2025,
+     "division": "AL West",
+     "actual_winner": {
+      "club": "Seattle Mariners",
+      "W": 90,
+      "war_lost": 6.727456584109364,
+      "W_cf": 89.27628022344263,
+      "last_round": "league_championship",
+      "still_qualifies": true
+     },
+     "counterfactual_winner": {
+      "club": "Houston Astros",
+      "W": 87,
+      "war_lost": 14.598458631984345,
+      "W_cf": 91.25806743934004,
+      "qualified": false
+     },
+     "actual_margin_wins": 3,
+     "counterfactual_margin_wins": 1.9817872158974126
+    },
+    {
+     "season": 2025,
+     "division": "AL East",
+     "actual_winner": {
+      "club": "Toronto Blue Jays",
+      "W": 94,
+      "war_lost": 9.001431043294785,
+      "W_cf": 94.71554511260697,
+      "last_round": "world_series",
+      "still_qualifies": true
+     },
+     "counterfactual_winner": {
+      "club": "New York Yankees",
+      "W": 94,
+      "war_lost": 10.886644453196078,
+      "W_cf": 95.90875177264338,
+      "qualified": true
+     },
+     "actual_margin_wins": 0,
+     "counterfactual_margin_wins": 1.1932066600364095
+    }
    ]
   },
   "ci_lower": {

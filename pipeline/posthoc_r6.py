@@ -29,6 +29,7 @@ D = D.merge(PS[["season", "tid", "last_round", "last_round_name", "world_series_
 D["last_round"] = D.last_round.fillna(0).astype(int); D["world_series_winner"] = D.world_series_winner.fillna(False).astype(bool); D["pennant"] = D.pennant.fillna(False).astype(bool)
 assert (D.qualified == (D.last_round > 0)).all(), "postseason rounds disagree with the standings' qualified flag"
 WC = {s: (3 if s >= 2022 else 2) for s in D.season.unique()}
+DIV = {200: "AL West", 201: "AL East", 202: "AL Central", 203: "NL West", 204: "NL East", 205: "NL Central"}
 D["pct_within_season"] = D.groupby("season").war_lost.rank(pct=True)
 
 
@@ -47,16 +48,22 @@ res = {"meta": {"label": "post hoc (2026-11-04), DEVIATIONS #31", "wins_per_war_
                 "rule": "W_cf = W + b (WAR lost - season median); division winners and 2 or 3 wild cards per league by W_cf; no tiebreakers"}}
 A = {}
 for lab, bb in (("primary", b), ("ci_lower", lo), ("ci_upper", hi)):
-    changed = 0; seasons_changed = 0; div_changed = 0; berths = 0; detail = []; match = 0
+    changed = 0; seasons_changed = 0; div_changed = 0; berths = 0; detail = []; match = 0; divs = []
     for s, g in D.groupby("season"):
         g = g.copy(); med = g.war_lost.median(); g["W_cf"] = g.W + bb * (g.war_lost - med)
         act, cf = field(g, "W"), field(g, "W_cf")
         berths += len(act); match += int(set(act) == set(g[g.qualified].tid))
         out_, in_ = sorted(set(act) - set(cf)), sorted(set(cf) - set(act)); changed += len(out_); seasons_changed += int(len(out_) > 0)
+        gi = g.set_index("tid")
         for lg, h in g.groupby("league_id"):
             for dv, hh in h.groupby("division_id"):
-                div_changed += int(hh.loc[hh.W.idxmax(), "tid"] != hh.loc[hh.W_cf.idxmax(), "tid"])
-        gi = g.set_index("tid")
+                ta, tc = hh.loc[hh.W.idxmax(), "tid"], hh.loc[hh.W_cf.idxmax(), "tid"]
+                if ta != tc:
+                    div_changed += 1
+                    divs.append({"season": int(s), "division": DIV[int(dv)],
+                                 "actual_winner": {"club": gi.club[ta], "W": int(gi.W[ta]), "war_lost": float(gi.war_lost[ta]), "W_cf": float(gi.W_cf[ta]), "last_round": gi.last_round_name[ta] if gi.last_round[ta] else None, "still_qualifies": ta in cf},
+                                 "counterfactual_winner": {"club": gi.club[tc], "W": int(gi.W[tc]), "war_lost": float(gi.war_lost[tc]), "W_cf": float(gi.W_cf[tc]), "qualified": bool(gi.qualified[tc])},
+                                 "actual_margin_wins": int(gi.W[ta] - gi.W[tc]), "counterfactual_margin_wins": float(gi.W_cf[tc] - gi.W_cf[ta])})
         detail.append({"season": int(s), "rule_matches_actual_field": set(act) == set(g[g.qualified].tid),
                        "out": [{"club": gi.club[t], "W": int(gi.W[t]), "war_lost": float(gi.war_lost[t]), "W_cf": float(gi.W_cf[t]), "last_round": gi.last_round_name[t] if gi.last_round[t] else None,
                                 "pennant": bool(gi.pennant[t]), "world_series_winner": bool(gi.world_series_winner[t])} for t in out_],
@@ -66,7 +73,7 @@ for lab, bb in (("primary", b), ("ci_lower", lo), ("ci_upper", hi)):
               "displaced_pennant_winners": [{"season": d["season"], "club": o["club"], "world_series_winner": o["world_series_winner"]} for d in detail for o in d["out"] if o["pennant"]],
               "displaced_world_series_winners": int(sum(o["world_series_winner"] for d in detail for o in d["out"]))}
     if lab == "primary":
-        A[lab]["detail"] = detail
+        A[lab]["detail"] = detail; A[lab]["division_titles"] = divs
 # postseason clubs displaced, by round reached (primary)
 disp = [o | {"season": d["season"]} for d in A["primary"]["detail"] for o in d["out"]]
 A["displaced_by_round_primary"] = {r: int(sum(1 for o in disp if o["last_round"] == r)) for r in ("wild_card", "division_series", "league_championship", "world_series")}
