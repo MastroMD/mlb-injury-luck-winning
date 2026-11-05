@@ -266,6 +266,17 @@ results files by `pipeline/write_r2_response.py`.
       foreseeability R² 0.27 (0.38, 0.44), 2026 0.50 (0.66, 0.64); ICC −0.05 (P = .92) and −0.03 (P = .83); design range
       −1.41 to −0.09 and −0.85 to −0.12; carry-over against new −1.38 vs −0.74 (P = .14) and −0.88 vs −0.69 (P = .62). The
       paper's Table S9 carries these two columns; the control-only values appear in Section 4.5 and the table note.
+    - **Plain units and free-agent dollars** (`pipeline/descriptives.py` → `results/descriptives_2026-11-04.json`, aggregates per
+      valuation). On the primary valuation a club loses 7.3 WAR to the IL in an average season (median 6.6, 10th percentile 3.3,
+      90th 11.9; 5.2 new injury and 2.1 carry-over), about 219 WAR a season over 30 clubs, and the by-season mean rose from
+      6.1–7.2 (2015–2019) to 8.1–8.8 (2023–2025); at the primary coefficient 4.6 wins per average club-season (2.4–6.9) and about
+      139 a season league-wide. At FanGraphs' figure for what clubs pay for a win in free agency (Clemens, 2026-02-24: $10.62M
+      per Steamer-projected WAR on average over 2020–2026, $11.23M for 2026), applied to the Steamer valuation, whose WAR lost
+      shares those units: $57M of talent per average club-season ($25M to $92M from a light to a heavy season), $27M per SD,
+      $68M between a light and a heavy season, $1.7B a season league-wide; a 10% reduction in injury loss would be worth 0.5
+      wins and $5.7M per club and 14 wins and $170M league-wide, a 25% reduction 1.1 wins and $14M per club. These enter the
+      abstract, Section 4.1, the Discussion and Supplement S1, with the end-rule caveat (levels are upper-end figures) and the
+      note that no club shows a durable reduction. The projections themselves stay out of the repository.
     - **Projected WAR on the IL at Opening Day** (`pipeline/posthoc_r5.py` → `results/posthoc_r5_2026-11-04.json`, written on
       the fresh-pull inputs, where its R² values differ from the X4 values in `results/` by less than 0.001). The X4 feature of
       `phase2_posthoc_r2.py` (opening-day 40-man players with an episode at their club covering its first game): leave-one-

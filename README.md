@@ -44,7 +44,8 @@ with `--projection-players` it replaces the Marcel rate itself by a player's pro
 projections are licensed (FanGraphs, members) and not included, so build `season,club_id,steamer_pos,zips_pos` or
 `season,mlbam,war` from your own copy (DEVIATIONS #31 gives the rules); the results are in
 `results/rerun_2026-11-04/steamer_control/`, `zips_control/`, `steamer_valuation/` and `zips_valuation/`.
-`pipeline/posthoc_r5.py` holds the Opening Day IL analyses (`results/posthoc_r5_2026-11-04.json`). `pipeline/dollars_bref.py`
+`pipeline/posthoc_r5.py` holds the Opening Day IL analyses (`results/posthoc_r5_2026-11-04.json`). `pipeline/descriptives.py` puts injury loss in plain units per valuation, WAR, wins and free-agent dollars
+(`results/descriptives_2026-11-04.json`). `pipeline/dollars_bref.py`
 converts the loss into salary paid while on the IL (`results/dollars_bref_2026-11-04.json`).
 
 ## Layout

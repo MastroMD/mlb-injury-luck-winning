@@ -1,0 +1,542 @@
+{
+ "primary": {
+  "meta": {
+   "valuation": "primary",
+   "club_seasons": 300,
+   "seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "clubs_per_season": 30,
+   "wins_per_war_lost": 0.6329292236993349,
+   "wins_per_war_lost_ci": [
+    0.3250792808566144,
+    0.9407791665418984
+   ],
+   "carry_share": 0.28612536556470197,
+   "source_dollars": "FanGraphs, What Are Teams Paying For A Win In Free Agency? 2026 Edition (Clemens, 2026-02-24), $M per Steamer-projected WAR, 2025 dollars",
+   "dollars_per_war": {
+    "fangraphs_2020_2026_average": 10.62,
+    "fangraphs_2026": 11.23
+   }
+  },
+  "war_lost": {
+   "mean": 7.311942839465497,
+   "median": 6.641711764858744,
+   "p10": 3.270268830567188,
+   "p90": 11.859921406533077,
+   "max": 22.93792658820316,
+   "sd_within_season": 3.6038069817171694,
+   "p90_minus_p10": 8.58965257596589,
+   "new_injury_mean": 5.219810521535226,
+   "carry_over_mean": 2.0921323179302704,
+   "by_season_mean": {
+    "2015": 6.613104104186802,
+    "2016": 6.123318513106642,
+    "2017": 6.75261831867787,
+    "2018": 7.160027947124214,
+    "2019": 7.156076424638723,
+    "2021": 6.4256478800431855,
+    "2022": 7.459221122686361,
+    "2023": 8.101440613962868,
+    "2024": 8.789876835955209,
+    "2025": 8.538096634273108
+   },
+   "early_seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+   ],
+   "early_mean_range": [
+    6.123318513106642,
+    7.160027947124214
+   ],
+   "late_seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "late_mean_range": [
+    8.101440613962868,
+    8.789876835955209
+   ],
+   "league_per_season": 219.3582851839649,
+   "league_total": 2193.5828518396493,
+   "carry_over_mean_from_table": 2.0921323179302704
+  },
+  "wins": {
+   "mean": 4.627942305116807,
+   "median": 4.203733471366784,
+   "p10": 2.0698487122190223,
+   "p90": 7.5064908489721045,
+   "max": 14.518084068743761,
+   "sd_within_season": 2.2809547553004914,
+   "p90_minus_p10": 5.436642136753083,
+   "new_injury_mean": 3.3037706212529114,
+   "carry_over_mean": 1.3241716838638962,
+   "league_per_season": 138.83826915350423,
+   "mean_ci": [
+    2.376961119918115,
+    6.878923490314353
+   ],
+   "league_per_season_ci": [
+    71.30883359754345,
+    206.36770470943057
+   ]
+  },
+  "dollars_musd": {
+   "fangraphs_2020_2026_average": {
+    "mean": 77.65283295512357,
+    "p10": 34.730254980623535,
+    "p90": 125.95236533738127,
+    "sd_within_season": 38.27243014583634,
+    "p90_minus_p10": 91.22211035675774,
+    "new_injury_mean": 55.4343877387041,
+    "league_per_season": 2329.584988653707
+   },
+   "fangraphs_2026": {
+    "mean": 82.11311808719753,
+    "p10": 36.72511896726952,
+    "p90": 133.18691739536646,
+    "sd_within_season": 40.470752404683815,
+    "p90_minus_p10": 96.46179842809694,
+    "new_injury_mean": 58.618472156840596,
+    "league_per_season": 2463.393542615926
+   }
+  },
+  "reductions": {
+   "10pct_of_all_loss": {
+    "war_per_club": 0.7311942839465497,
+    "wins_per_club": 0.4627942305116808,
+    "war_league": 21.93582851839649,
+    "wins_league": 13.883826915350422,
+    "wins_league_ci": [
+     7.130883359754345,
+     20.63677047094306
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 7.765283295512359,
+     "fangraphs_2026": 8.211311808719753
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 232.95849886537076,
+     "fangraphs_2026": 246.3393542615926
+    }
+   },
+   "10pct_of_new_injury_loss": {
+    "war_per_club": 0.5219810521535226,
+    "wins_per_club": 0.3303770621252911,
+    "wins_league": 9.911311863758733,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 5.5434387738704105,
+     "fangraphs_2026": 5.861847215684059
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 166.30316321611232,
+     "fangraphs_2026": 175.85541647052176
+    }
+   },
+   "25pct_of_all_loss": {
+    "war_per_club": 1.8279857098663743,
+    "wins_per_club": 1.1569855762792018,
+    "war_league": 54.83957129599123,
+    "wins_league": 34.70956728837606,
+    "wins_league_ci": [
+     17.827208399385864,
+     51.59192617735764
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 19.413208238780893,
+     "fangraphs_2026": 20.528279521799384
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 582.3962471634268,
+     "fangraphs_2026": 615.8483856539815
+    }
+   },
+   "25pct_of_new_injury_loss": {
+    "war_per_club": 1.3049526303838066,
+    "wins_per_club": 0.8259426553132279,
+    "wins_league": 24.778279659396834,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 13.858596934676026,
+     "fangraphs_2026": 14.654618039210149
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 415.7579080402807,
+     "fangraphs_2026": 439.6385411763045
+    }
+   }
+  }
+ },
+ "steamer_valuation": {
+  "meta": {
+   "valuation": "steamer_valuation",
+   "club_seasons": 300,
+   "seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "clubs_per_season": 30,
+   "wins_per_war_lost": 0.8587377054825243,
+   "wins_per_war_lost_ci": [
+    0.366491397613048,
+    1.3509840133520201
+   ],
+   "carry_share": 0.172982194328021,
+   "source_dollars": "FanGraphs, What Are Teams Paying For A Win In Free Agency? 2026 Edition (Clemens, 2026-02-24), $M per Steamer-projected WAR, 2025 dollars",
+   "dollars_per_war": {
+    "fangraphs_2020_2026_average": 10.62,
+    "fangraphs_2026": 11.23
+   }
+  },
+  "war_lost": {
+   "mean": 5.327514711934156,
+   "median": 4.952814814814815,
+   "p10": 2.3096555555555556,
+   "p90": 8.692506790123458,
+   "max": 17.355858024691358,
+   "sd_within_season": 2.525803379095529,
+   "p90_minus_p10": 6.3828512345679025,
+   "new_injury_mean": 4.405949526748971,
+   "carry_over_mean": 0.921565185185185,
+   "by_season_mean": {
+    "2015": 3.995810905349794,
+    "2016": 4.4578786008230455,
+    "2017": 5.261346502057614,
+    "2018": 5.333357613168725,
+    "2019": 4.90431975308642,
+    "2021": 5.631524074074075,
+    "2022": 5.047796913580246,
+    "2023": 5.850810288065844,
+    "2024": 6.390990329218107,
+    "2025": 6.401312139917695
+   },
+   "early_seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+   ],
+   "early_mean_range": [
+    3.995810905349794,
+    5.333357613168725
+   ],
+   "late_seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "late_mean_range": [
+    5.850810288065844,
+    6.401312139917695
+   ],
+   "league_per_season": 159.82544135802468,
+   "league_total": 1598.2544135802468,
+   "carry_over_mean_from_table": 0.9215651851851852
+  },
+  "wins": {
+   "mean": 4.574937759650728,
+   "median": 4.253168829753927,
+   "p10": 1.9833883122327427,
+   "p90": 7.464583335841881,
+   "max": 14.904129696803913,
+   "sd_within_season": 2.169002598264501,
+   "p90_minus_p10": 5.481195023609138,
+   "new_injury_mean": 3.7835549870722254,
+   "carry_over_mean": 0.7913827725785033,
+   "league_per_season": 137.24813278952183,
+   "mean_ci": [
+    1.9524883125808237,
+    7.197387206720737
+   ],
+   "league_per_season_ci": [
+    58.574649377424706,
+    215.92161620162213
+   ]
+  },
+  "dollars_musd": {
+   "fangraphs_2020_2026_average": {
+    "mean": 56.578206240740734,
+    "p10": 24.528541999999998,
+    "p90": 92.31442211111111,
+    "sd_within_season": 26.824031885994515,
+    "p90_minus_p10": 67.78588011111113,
+    "new_injury_mean": 46.79118397407407,
+    "league_per_season": 1697.346187222222
+   },
+   "fangraphs_2026": {
+    "mean": 59.82799021502057,
+    "p10": 25.93743188888889,
+    "p90": 97.61685125308644,
+    "sd_within_season": 28.36477194724279,
+    "p90_minus_p10": 71.67941936419754,
+    "new_injury_mean": 49.47881318539095,
+    "league_per_season": 1794.839706450617
+   }
+  },
+  "reductions": {
+   "10pct_of_all_loss": {
+    "war_per_club": 0.5327514711934156,
+    "wins_per_club": 0.45749377596507285,
+    "war_league": 15.982544135802469,
+    "wins_league": 13.724813278952185,
+    "wins_league_ci": [
+     5.857464937742471,
+     21.592161620162212
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 5.657820624074074,
+     "fangraphs_2026": 5.982799021502057
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 169.73461872222222,
+     "fangraphs_2026": 179.4839706450617
+    }
+   },
+   "10pct_of_new_injury_loss": {
+    "war_per_club": 0.4405949526748971,
+    "wins_per_club": 0.37835549870722257,
+    "wins_league": 11.350664961216676,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 4.679118397407407,
+     "fangraphs_2026": 4.947881318539094
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 140.37355192222225,
+     "fangraphs_2026": 148.43643955617284
+    }
+   },
+   "25pct_of_all_loss": {
+    "war_per_club": 1.331878677983539,
+    "wins_per_club": 1.143734439912682,
+    "war_league": 39.95636033950617,
+    "wins_league": 34.31203319738046,
+    "wins_league_ci": [
+     14.643662344356176,
+     53.98040405040553
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 14.144551560185183,
+     "fangraphs_2026": 14.956997553755143
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 424.3365468055555,
+     "fangraphs_2026": 448.7099266126543
+    }
+   },
+   "25pct_of_new_injury_loss": {
+    "war_per_club": 1.1014873816872428,
+    "wins_per_club": 0.9458887467680563,
+    "wins_league": 28.376662403041692,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 11.697795993518518,
+     "fangraphs_2026": 12.369703296347737
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 350.93387980555553,
+     "fangraphs_2026": 371.09109889043214
+    }
+   }
+  }
+ },
+ "zips_valuation": {
+  "meta": {
+   "valuation": "zips_valuation",
+   "club_seasons": 300,
+   "seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "clubs_per_season": 30,
+   "wins_per_war_lost": 0.7461298417995332,
+   "wins_per_war_lost_ci": [
+    0.48449758174264757,
+    1.0077621018564222
+   ],
+   "carry_share": 0.2234966740575469,
+   "source_dollars": "FanGraphs, What Are Teams Paying For A Win In Free Agency? 2026 Edition (Clemens, 2026-02-24), $M per Steamer-projected WAR, 2025 dollars",
+   "dollars_per_war": {
+    "fangraphs_2020_2026_average": 10.62,
+    "fangraphs_2026": 11.23
+   }
+  },
+  "war_lost": {
+   "mean": 7.546569156378601,
+   "median": 7.168922839506173,
+   "p10": 3.5111802469135807,
+   "p90": 11.631891975308644,
+   "max": 24.55953703703704,
+   "sd_within_season": 3.2957683225839487,
+   "p90_minus_p10": 8.120711728395063,
+   "new_injury_mean": 5.859936049382716,
+   "carry_over_mean": 1.6866331069958846,
+   "by_season_mean": {
+    "2015": 5.636638683127572,
+    "2016": 6.026379423868312,
+    "2017": 6.655629835390946,
+    "2018": 7.518344444444444,
+    "2019": 7.241152469135802,
+    "2021": 7.3848133744855975,
+    "2022": 7.4501569958847735,
+    "2023": 8.76013888888889,
+    "2024": 9.190091563786009,
+    "2025": 9.602345884773662
+   },
+   "early_seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+   ],
+   "early_mean_range": [
+    5.636638683127572,
+    7.518344444444444
+   ],
+   "late_seasons": [
+    2023,
+    2024,
+    2025
+   ],
+   "late_mean_range": [
+    8.76013888888889,
+    9.602345884773662
+   ],
+   "league_per_season": 226.39707469135803,
+   "league_total": 2263.97074691358,
+   "carry_over_mean_from_table": 1.6866331069958846
+  },
+  "wins": {
+   "mean": 5.630720450778003,
+   "median": 5.348947264113802,
+   "p10": 2.619796362159276,
+   "p90": 8.678901719366298,
+   "max": 18.324603484114224,
+   "sd_within_season": 2.4590710971374747,
+   "p90_minus_p10": 6.059105357207023,
+   "new_injury_mean": 4.372273157481308,
+   "carry_over_mean": 1.2584472932966946,
+   "league_per_season": 168.92161352334008,
+   "mean_ci": [
+    3.656294506719084,
+    7.605146394836946
+   ],
+   "league_per_season_ci": [
+    109.68883520157252,
+    228.1543918451084
+   ]
+  },
+  "dollars_musd": {
+   "fangraphs_2020_2026_average": {
+    "mean": 80.14456444074074,
+    "p10": 37.288734222222224,
+    "p90": 123.53069277777779,
+    "sd_within_season": 35.00105958584153,
+    "p90_minus_p10": 86.24195855555557,
+    "new_injury_mean": 62.23252084444444,
+    "league_per_season": 2404.336933222222
+   },
+   "fangraphs_2026": {
+    "mean": 84.74797162613169,
+    "p10": 39.430554172839514,
+    "p90": 130.62614688271609,
+    "sd_within_season": 37.01147826261774,
+    "p90_minus_p10": 91.19559270987656,
+    "new_injury_mean": 65.8070818345679,
+    "league_per_season": 2542.4391487839507
+   }
+  },
+  "reductions": {
+   "10pct_of_all_loss": {
+    "war_per_club": 0.7546569156378601,
+    "wins_per_club": 0.5630720450778002,
+    "war_league": 22.639707469135804,
+    "wins_league": 16.892161352334007,
+    "wins_league_ci": [
+     10.968883520157252,
+     22.81543918451084
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 8.014456444074074,
+     "fangraphs_2026": 8.474797162613168
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 240.43369332222224,
+     "fangraphs_2026": 254.24391487839506
+    }
+   },
+   "10pct_of_new_injury_loss": {
+    "war_per_club": 0.5859936049382716,
+    "wins_per_club": 0.4372273157481308,
+    "wins_league": 13.116819472443924,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 6.223252084444445,
+     "fangraphs_2026": 6.58070818345679
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 186.69756253333335,
+     "fangraphs_2026": 197.4212455037037
+    }
+   },
+   "25pct_of_all_loss": {
+    "war_per_club": 1.8866422890946501,
+    "wins_per_club": 1.4076801126945007,
+    "war_league": 56.59926867283951,
+    "wins_league": 42.23040338083502,
+    "wins_league_ci": [
+     27.42220880039313,
+     57.0385979612771
+    ],
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 20.036141110185184,
+     "fangraphs_2026": 21.18699290653292
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 601.0842333055555,
+     "fangraphs_2026": 635.6097871959877
+    }
+   },
+   "25pct_of_new_injury_loss": {
+    "war_per_club": 1.464984012345679,
+    "wins_per_club": 1.093068289370327,
+    "wins_league": 32.792048681109804,
+    "musd_per_club": {
+     "fangraphs_2020_2026_average": 15.55813021111111,
+     "fangraphs_2026": 16.451770458641974
+    },
+    "musd_league": {
+     "fangraphs_2020_2026_average": 466.74390633333326,
+     "fangraphs_2026": 493.5531137592593
+    }
+   }
+  }
+ }
+}
